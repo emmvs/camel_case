@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 
 puts "Cleaning Database! 🧹"
 
@@ -19,7 +21,8 @@ all_desctription = [
   "bactrian camel",
   "hybrid camel",
   "wild bactrian camel",
-  "cama"]
+  "cama",
+  ]
 
 all_purpose = [
   "movie production",
@@ -31,6 +34,8 @@ all_purpose = [
   "present",
   "wedding"]
 
+e = 0
+
 10.times do
   camel = Camel.create!(
     name: Faker::FunnyName.name,
@@ -41,7 +46,11 @@ all_purpose = [
     purpose: all_purpose.sample,
     user: User.first
   )
+  photo = URI.open('https://source.unsplash.com/collection/9894242')
+  camel.photo.attach(io: photo, filename: "camel#{e}.png", content_type: 'image/png')
+  camel.save!
   puts "Camel #{camel.id} is created 🐫🐫🐫🐫🐫🐫🐫"
+  e = e + 1
 end
 
 puts "Amazing! We are done 🐫"
