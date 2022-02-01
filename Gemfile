@@ -5,6 +5,8 @@ ruby '2.7.4'
 
 # devise
 gem 'devise'
+# pundit
+gem 'pundit'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
@@ -40,7 +42,6 @@ gem 'cloudinary', '~> 1.16.0'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'dotenv-rails'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
