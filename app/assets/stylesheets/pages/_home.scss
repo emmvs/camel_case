@@ -1,1 +1,14 @@
 // Specific CSS for your home-page
+.h1 {
+  align-self: center;
+}
+
+.p {
+  align-self: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
