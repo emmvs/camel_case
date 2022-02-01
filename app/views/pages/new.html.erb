@@ -1,0 +1,18 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3>Let's bring an amazing new camel to your service</h3>
+        <%= simple_form_for @list do |f| %>
+          <%= f.input :name, placeholder: 'Your camel nickname - Sugarcane' %>
+          <%= f.input :age, placeholder: 'How old is your amazing camel?' %>
+          <%= f.input :price, placeholder: 'How much should your camel worth for a day' %>
+          <%= f.input :city, placeholder: "Where's your camel living" %>
+          <%= f.input :purpose, placeholder: 'For movies or party or travelling?' %>
+          <%= f.input :description, placeholder: 'Let us know more about your beloved camel' %>
+          <%= f.submit class: 'btn btn-flat' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
