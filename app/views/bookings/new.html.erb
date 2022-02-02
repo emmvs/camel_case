@@ -1,7 +1,13 @@
-<h1>Book now</h1>
+<h1>Book your camel</h1>
 
 <%= simple_form_for [@camel, @booking] do |f| %>
   <%= f.input :check_in %>
   <%= f.input :check_out %>
   <%= f.button :submit, "Book" %>
 <% end %>
+
+<h2>Your choice</h2>
+<%= @camel.name %>
+<%= "#{@camel.price} €" %>
+<%= @camel.purpose %>
+<%= cl_image_tag @camel.photo.key, height: 300, width: 400, crop: :fill %>

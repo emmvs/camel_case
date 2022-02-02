@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
+      @booking.confirmed!
       redirect_to camel_path(@camel)
     else
       render :new
