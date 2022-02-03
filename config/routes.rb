@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  #INDEX
+  get 'camels/index', to: "camels#index"
+
   # CREATE
   resources :camels do
     resources :bookings, only: [ :new, :create ]

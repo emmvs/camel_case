@@ -14,7 +14,7 @@ Camel.destroy_all
 
 puts "Database is clean! 🧼"
 
-puts "Creating Camels... 🐫"
+puts "Creating Camels... 🐫🐫🐫🐫🐫🐫🐫"
 
 all_desctription = [
   "dromedary",
@@ -49,7 +49,7 @@ e = 0
   photo = URI.open('https://source.unsplash.com/collection/9894242')
   camel.photo.attach(io: photo, filename: "camel#{e}.png", content_type: 'image/png')
   camel.save!
-  puts "Camel #{camel.id} is created 🐫🐫🐫🐫🐫🐫🐫"
+  puts "Camel #{camel.id} is created 🐫"
   e = e + 1
 end
 
