@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_camel
+  before_action :find_camel, except: [:edit, :update]
 
   def new
     @booking = Booking.new
@@ -20,6 +20,17 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+    authorize @booking
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(request_params)
+    authorize @booking
+  end
+
   private
 
   def find_camel
@@ -28,5 +39,9 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:check_in, :check_out)
+  end
+
+  def request_params
+    params.require(:booking).permit(:status)
   end
 end
