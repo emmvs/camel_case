@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_03_201825) do
+ActiveRecord::Schema.define(version: 2022_02_03_222758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,13 +59,13 @@ ActiveRecord::Schema.define(version: 2022_02_03_201825) do
     t.string "name"
     t.integer "age"
     t.text "description"
-    t.integer "price"
     t.string "city"
     t.string "purpose"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "sku"
+    t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_camels_on_user_id"
   end
 
