@@ -1,7 +1,7 @@
 <h1><%= "Bookingnumber #{@booking.id}" %></h1>
 
 <%= simple_form_for(@booking) do |f| %>
-  <%= f.select :status, [:accepted, :declined] %>
+  <%= f.select :status, [:Accept, :Decline] %>
   <%= f.submit "Continue" %>
 <% end %>
 

@@ -27,7 +27,11 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(request_params)
+    if params["booking"]["status"] == "Accept"
+      @booking.accepted!
+    else
+      @booking.declined!
+    end
     authorize @booking
   end
 
@@ -39,9 +43,5 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:check_in, :check_out)
-  end
-
-  def request_params
-    params.require(:booking).permit(:status)
   end
 end
