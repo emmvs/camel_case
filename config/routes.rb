@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'camels/index', to: "camels#index"
 
   # CREATE
-  resources :camels
+  resources :camels do
+    resources :bookings, only: [ :new, :create ]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :bookings, only: [ :edit, :update ]
 end
