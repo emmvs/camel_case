@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  #INDEX
+  get 'camels/index', to: "camels#index"
+
   # CREATE
   get 'camels/new', to: 'camels#new'
   post 'camels', to: 'camels#create'
