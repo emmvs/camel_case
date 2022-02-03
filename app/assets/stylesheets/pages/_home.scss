@@ -19,5 +19,26 @@ h1, p {
 
 .flex-item {
   grid-template-columns: 1fr 1fr 1fr;
-  align-self: center;
+  align-content: space-around;
+  width: 165px;
+  height: 190px;
+  display: block;
+  border: solid;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.searchbar {
+  width: 30%;
+  background: white;
+  position: relative;
+  top: 30%;
+  left: 35%;
+  display: flex;
+  align-items: center;
+
+  p {
+    flex-grow:1;
+    margin:0;
+  }
 }
