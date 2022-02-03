@@ -1,1 +1,23 @@
 // Specific CSS for your home-page
+h1, p {
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: solid;
+}
+
+.camel-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.flex-item {
+  grid-template-columns: 1fr 1fr 1fr;
+  align-self: center;
+}

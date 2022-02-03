@@ -1,0 +1,11 @@
+<h1>🐫 Here are our Amazing Camels 🐫</h1>
+
+<ul>
+  <% @camels.each do |camel| %>
+    <li><%= camel.name %></li>
+    <li><%= camel.age %></li>
+    <li><%= camel.price %></li>
+    <li><%= camel.city %></li>
+    <br>
+  <% end %>
+</ul>
