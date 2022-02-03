@@ -35,6 +35,12 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  # def update
+  #   @booking = Booking.find(params[:id])
+  #   @booking.update(request_params)
+  #   authorize @booking
+  # end
+
   private
 
   def find_camel
@@ -44,4 +50,8 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:check_in, :check_out)
   end
+
+  # def request_params
+  #   params.require(:booking).permit(:status)
+  # end
 end
