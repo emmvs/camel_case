@@ -2,7 +2,8 @@
 <%= simple_form_for [@camel, @booking] do |f| %>
 <%= f.input :check_in %>
 <%= f.input :check_out %>
-<%= f.button :submit, "Book" %>
+<%= hidden_field_tag 'camel_id', @camel.id %>
+<%= f.button :submit, "Book", id: 'book' %>
 <% end %>
 
 <h2>Your choice</h2>
@@ -10,3 +11,15 @@
 <%= "#{@camel.price} €" %>
 <%= @camel.purpose %>
 <%= cl_image_tag @camel.photo.key, height: 300, width: 400, crop: :fill %>
+
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+  const paymentButton = document.getElementById('book');
+  paymentButton.addEventListener('click', () => {
+    const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+    stripe.redirectToCheckout({
+      sessionId: '<%= @booking.checkout_session_id %>'
+    });
+  });
+</script>
