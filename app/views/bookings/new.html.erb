@@ -10,3 +10,5 @@
 <%= "#{@camel.price} €" %>
 <%= @camel.purpose %>
 <%= cl_image_tag @camel.photo.key, height: 300, width: 400, crop: :fill %>
+
+<%= button_to "Book", checkout_create_path(@camel), remote: true %>

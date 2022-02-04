@@ -1,0 +1,5 @@
+const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+
+stripe.redirectToCheckout({
+  sessionId: '<%= @session.id %>'
+});
