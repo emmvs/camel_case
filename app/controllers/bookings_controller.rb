@@ -18,23 +18,8 @@ class BookingsController < ApplicationController
     @booking.amount = @camel.price
     authorize @booking
 
-    session = Stripe::Checkout::Session.create(
-      payment_method_types: ['card'],
-      line_items: [{
-        name: @camel.sku,
-        images: [@camel.photo.key],
-        amount: @camel.price_cents,
-        currency: 'eur',
-        quantity: 1
-     }],
-      success_url: order_url(order),
-      cancel_url: order_url(order)
-    )
-
     if @booking.save
       @booking.confirmed!
-      @booking.update(checkout_session_id: session.id)
-      redirect_to camel_path(@camel)
     else
       render :new
     end
