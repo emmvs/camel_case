@@ -6,16 +6,21 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
   margin-bottom: 20px;
+  padding: 20px;
 }
 
 .camel-card {
   padding: 12px;
-  border: solid;
+  border: solid cornflowerblue;
 }
 
 .camel-photo {
   width: 100%;
+  max-width: 200px;
+  height: auto;
   margin-bottom: 10px;
+  position: relative;
+  left: 24%;
 }
 
 .img {
