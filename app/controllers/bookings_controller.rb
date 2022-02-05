@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
 
     if @booking.save
       @booking.pending!
-      redirect_to checkout_create_path(@booking), remote: true
+      redirect_to checkout_path(@booking)
     else
       render :new
     end
@@ -33,14 +33,12 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    unless @booking.checkout_session_id.nil?
-      if params["booking"]["status"] == "Accept"
-        @booking.accepted!
-      else
-        @booking.declined!
-      end
-      authorize @booking
+    if params["booking"]["status"] == "Accept"
+      @booking.accepted!
+    elsif params["booking"]["status"] == "Decline"
+      @booking.declined!
     end
+    authorize @booking
   end
 
   # def update

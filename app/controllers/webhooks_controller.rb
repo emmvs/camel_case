@@ -1,9 +1,10 @@
 class WebhooksController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
-payload = request.body.read
+  def webhook
+    payload = request.body.read
     sig_header = request.env['HTTP_STRIPE_SIGNATURE']
     event = nil
-
     begin
         event = Stripe::Webhook.construct_event(
             payload, sig_header, ENV['STRIPE_WEBHOOK_SECRET_KEY']
@@ -17,14 +18,17 @@ payload = request.body.read
         status 400
         return
     end
-
+    binding.pry
     case event.type
-    when 'setup_intent.succeeded'
-        setup_intent = event.data.object
-        @booking = Booking.find_by(checkout_session_id: session.id)
+    when 'checkout.session.completed'
+        @session = event.data.object
+        @booking = Booking.find_by(checkout_session_id: @session.id)
+        binding.pry
         @booking.confirmed!
+        @booking.save
     else
         puts "Unhandled event type: #{event.type}"
     end
     status 200
+  end
   end

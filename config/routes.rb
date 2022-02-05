@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :bookings, only: [ :edit, :update ]
 
-  post "checkout/create", to: "checkout#create"
+  get "checkout/start/:id", to: "checkouts#start", as: "checkout"
 
-  resources :webhooks, only: [:create]
+  get "/webhook", to: "webhooks#webhook"
 end
