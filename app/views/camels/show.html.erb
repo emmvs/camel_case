@@ -7,7 +7,7 @@
         <%= cl_image_tag @camel.photo.key, height: 300, width: 300, crop: :fill, class: "camel-avatar" %>
       </div>
       <div class="new-boking">
-        <%= link_to "Book", camels_path, class: "cta-booking"%>
+        <%= link_to "Book", new_camel_booking_path(@camel), class: "cta-booking"%>
       </div>
     </div>
       <div class="camel-box">
