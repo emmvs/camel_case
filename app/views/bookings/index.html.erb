@@ -12,7 +12,7 @@
     <%= "#{booking.camel.price} €" %>
     <%# How to calculate the price accordingly to the dates  %>
     <button name="Access the request" type="submit" class="btn btn-flat">
-      <%= link_to "Go to request", "../bookings/#{@camels.bookings.id}" %>
+      <%= link_to "Go to request", edit_booking_path(booking) %>
     </button>
     <br>
     <br>
