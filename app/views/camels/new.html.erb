@@ -1,7 +1,7 @@
 <div class="container py-5">
-  <div class="row">
+  <div class="row form-bg">
     <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
+      <div class="bg-white rounded p-4 shadow">
         <h3>Let's bring an amazing new camel to your service</h3>
         <%= simple_form_for @camel do |f| %>
           <%= f.input :name, placeholder: 'Your camel nickname - Sugarcane' %>
@@ -12,7 +12,7 @@
           <%= f.select :purpose, ["Movie Production", "Desert Trip", "Race", "Photoshoot", "Birthday Party", "Fair", "Present", "Wedding"] %>
           <%= f.input :description, placeholder: 'Let us know more about your beloved camel' %>
           <%= f.input :photo %>
-          <%= f.submit class: 'btn btn-flat' %>
+          <%= f.submit class: 'btn btn-form' %>
         <% end %>
       </div>
     </div>
