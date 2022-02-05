@@ -8,5 +8,15 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+
+}
+
+.navbar-brand {
+  flex-grow: 1;
+}
+
+.navbar-logo {
+  height: 100px;
+  position: relative;
+  left: 53%;
 }

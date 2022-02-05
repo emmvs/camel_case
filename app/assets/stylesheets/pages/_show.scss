@@ -4,6 +4,7 @@ body {
 
 .camel-name {
   font-size: 32px;
+  text-align: left;
 }
 
 .intro {
@@ -12,6 +13,7 @@ body {
 
 .description-text {
   font-size: 12px;
+  text-align: left;
 }
 
 .header-box {
@@ -92,4 +94,20 @@ body {
 .cta-booking:hover {
   text-decoration: none;
   color: lightgrey;
+}
+
+.camel-purpose {
+  text-align: left;
+}
+
+.camel-price {
+  text-align: left;
+}
+
+.camel-city {
+  text-align: left;
+}
+
+.camel-age {
+  text-align: left;
 }
