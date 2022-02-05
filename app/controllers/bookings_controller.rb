@@ -2,11 +2,13 @@ class BookingsController < ApplicationController
   before_action :find_camel, except: [:edit, :update, :index]
 
   def new
+    @bookings = policy_scope(Booking)
     @booking = Booking.new
     authorize @booking
   end
 
   def create
+    @bookings = policy_scope(Booking)
     @booking = Booking.new(booking_params)
     @booking.camel = @camel
     @booking.user = current_user
@@ -20,11 +22,13 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @bookings = policy_scope(Booking)
     @booking = Booking.find(params[:id])
     authorize @booking
   end
 
   def update
+    @bookings = policy_scope(Booking)
     @booking = Booking.find(params[:id])
     @booking.update(request_params)
     authorize @booking

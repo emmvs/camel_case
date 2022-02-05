@@ -11,11 +11,10 @@
     <%# // add date request here %>
     <%= "#{booking.camel.price} €" %>
     <%# How to calculate the price accordingly to the dates  %>
-    <button name="Accept" type="submit" class="btn btn-flat">
-      <%= link_to "Accept", camels_path, notice: "You accepted the request!" %>
+    <button name="Access the request" type="submit" class="btn btn-flat">
+      <%= link_to "Go to request", "../bookings/#{@camels.bookings.id}" %>
     </button>
-    <button name="Decline" type="submit" class="btn btn-flat">
-      <%= link_to "Decline", camels_path, notice: "You declined the request!"%>
-    </button>
+    <br>
+    <br>
   <% end %>
 <% end %>
