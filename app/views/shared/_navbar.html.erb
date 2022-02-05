@@ -21,7 +21,7 @@
             <%= link_to "New Camel", "/camels/new", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <% if !@camels.empty? %>
+            <% if @camels.length > 0 %>
               <%= link_to "Camel Roulette", "/camels/#{@camels.sample.id}", class: "nav-link" %>
             <% end %>
           </li>
