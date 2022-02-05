@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_camel, except: [:edit, :update]
+  before_action :find_camel, except: [:edit, :update, :index]
 
   def new
     @booking = Booking.new
@@ -31,9 +31,8 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
-  def request
-    @booking = Booking.all
-    authorize @booking
+  def index
+    @bookings = policy_scope(Booking)
   end
 
 
