@@ -2,14 +2,22 @@
 
 <h2>Amazing Camel Request</h2>
 <%# How to link the following to the request made by the user? %>
-
-<%= if @booking.statuts == "pending" %>
-  <%= @user.name "would like to rent one of your amazing camels" %>
-  <%= @camel.name %>
-  <%= @camel.purpose %>
-  <%= cl_image_tag @camel.photo.key, height: 300, width: 400, crop: :fill %>
-  <%# // add date request here %>
-  <%= "#{@camel.price} €" %>
-  <%# How to calculate the price accordingly to the dates  %>
-<%= end %>
-integrate conditions --> if statuts is pending then show booking else no
+<% @bookings.each do |booking| %>
+  <% if booking.status == pending %>
+    <%= @user.first_name " would like to rent one of your amazing camels" %>
+    <%= @camel.name %>
+    <%= @camel.purpose %>
+    <%= cl_image_tag @camel.photo.key, height: 300, width: 400, crop: :fill %>
+    <%# // add date request here %>
+    <%= "#{@camel.price} €" %>
+    <%# How to calculate the price accordingly to the dates  %>
+    <button name="Accept" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i>
+      <%= link_to "Camels", camels_path %>
+    </button>
+    <button name="Decline" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i>
+      <%= link_to "Camels", camels_path %>
+    </button>
+  <% end %>
+<% end %>
