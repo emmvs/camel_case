@@ -2,10 +2,10 @@
 
 <ul>
   <% @camels.each do |camel| %>
-  <%= cl_image_tag @camel.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag camel.photo.key, height: 300, width: 400, crop: :fill %>
     <li><%= camel.name %></li>
     <li><%= "#{camel.age} years old" %></li>
-    <li><%= "#{@camel.price} €" %></li>
+    <li><%= "#{camel.price} €" %></li>
     <li><%= "Lives in #{camel.city}" %></li>
     <br>
   <% end %>
