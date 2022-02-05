@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @camels = policy_scope(Camel)
     authorize @booking
   end
 
@@ -22,6 +23,7 @@ class BookingsController < ApplicationController
   def edit
     @booking = Booking.find(params[:id])
     authorize @booking
+    @camels = policy_scope(Camel)
   end
 
   def update
@@ -32,6 +34,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
+    @camels = policy_scope(Camel)
   end
 
 
