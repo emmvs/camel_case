@@ -21,7 +21,9 @@
             <%= link_to "New Camel", "/camels/new", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Camel Roulette", "/camels/#{@camels.sample.id}", class: "nav-link" %>
+            <% if !@camels.empty? %>
+              <%= link_to "Camel Roulette", "/camels/#{@camels.sample.id}", class: "nav-link" %>
+            <% end %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/emmvs", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

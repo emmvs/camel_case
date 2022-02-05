@@ -36,6 +36,16 @@ all_purpose = [
 
 e = 0
 
+5.times do
+  user = User.create!(
+    first_name: Faker::FunnyName.name,
+    last_name: Faker::FunnyName.name,
+    phone_number: "+491065666789",
+    email: "emma@test.com",
+    password: "123456",
+  )
+end
+
 10.times do
   camel = Camel.create!(
     name: Faker::FunnyName.name,
