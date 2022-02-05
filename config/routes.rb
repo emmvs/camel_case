@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [ :edit, :update ]
 
   post "checkout/create", to: "checkout#create"
+
+  resources :webhooks, only: [:create]
 end
