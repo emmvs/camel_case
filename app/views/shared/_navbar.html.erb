@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/dk5glvhr6/image/upload/v1643918884/logo_iawvkj.png", class: "navbar-logo" %>
+    <%= link_to "/home", class: "navbar-brand" do %>
+      <%= image_tag "https://res.cloudinary.com/dk5glvhr6/image/upload/v1644070424/CamelCase-3_o4eypu.png", class: "navbar-logo" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,10 +12,19 @@
       <ul class="navbar-nav me-auto">
         <%# if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", "/home", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "My Camels", "#", class: "nav-link" %>
+            <%= link_to "Camels", "/camels", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New Camel", "/camels/new", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%# <% chosen_camel = @camels.sample.id %>
+            <% unless @camels.empty? %>
+              <%= link_to "Camel Roulette", "/camels/#{@camels.sample.id}", class: "nav-link" %>
+            <% end %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/emmvs", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
