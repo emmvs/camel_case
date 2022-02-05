@@ -16,16 +16,18 @@ class CamelsController < ApplicationController
   end
 
   def create
-    @camel = camel.new(camel_params)
+    @camel = Camel.new(camel_params)
+    @camel.user = current_user
     authorize @camel
     if @camel.save
       redirect_to camels_path
     else
+      #raise
       render :new
     end
   end
 
   def camel_params
-    params.require(:camel).permit(:name, :age, :description, :price, :city, :purpose)
+    params.require(:camel).permit(:name, :age, :description, :price, :city, :purpose, :photo)
   end
 end
