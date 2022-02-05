@@ -1,8 +1,8 @@
 class CamelsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :policy_scope_camels, only: [:index, :show, :new]
 
   def index
-    @camels = policy_scope(Camel)
   end
 
   def show
@@ -29,5 +29,9 @@ class CamelsController < ApplicationController
 
   def camel_params
     params.require(:camel).permit(:name, :age, :description, :price, :city, :purpose, :photo)
+  end
+
+  def policy_scope_camels
+    @camels = policy_scope(Camel)
   end
 end
