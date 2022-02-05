@@ -31,6 +31,12 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def request
+    @booking = Booking.all
+    authorize @booking
+  end
+
+
   private
 
   def find_camel

@@ -1,0 +1,9 @@
+<h1>Requests for your amazing camels 🐫</h1>
+
+<h2>Amazing Camel Request</h2>
+<%= @user.name "would like to rent one of your amazing camels" %>
+<%= @camel.name %>
+<%= @camel.purpose %>
+<%= cl_image_tag @camel.photo.key, height: 300, width: 400, crop: :fill %>
+<%# // add date request here %>
+<%= "#{@camel.price} €" %>
