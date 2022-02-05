@@ -1,9 +1,15 @@
 <h1>Requests for your amazing camels 🐫</h1>
 
 <h2>Amazing Camel Request</h2>
+<%# How to link the following to the request made by the user? %>
 <%= @user.name "would like to rent one of your amazing camels" %>
 <%= @camel.name %>
 <%= @camel.purpose %>
 <%= cl_image_tag @camel.photo.key, height: 300, width: 400, crop: :fill %>
 <%# // add date request here %>
 <%= "#{@camel.price} €" %>
+<%# How to calculate the price accordingly to the dates  %>
+add index to the booking controller
+booking page --> resources to index also
+create as an index
+integrate conditions --> if statuts is pending then show booking else no
