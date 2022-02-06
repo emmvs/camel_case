@@ -35,8 +35,10 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     if params["booking"]["status"] == "Accept"
       @booking.accepted!
+      redirect_to payment_path(@booking)
     elsif params["booking"]["status"] == "Decline"
       @booking.declined!
+      redirect_to payment_path(@booking)
     end
     authorize @booking
   end

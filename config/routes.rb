@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :bookings, only: [ :edit, :update ]
 
   get "checkout/start/:id", to: "checkouts#start", as: "checkout"
+  get "payment/start/:id", to: "payments#start", as: "payment"
 
-  get "/webhook", to: "webhooks#webhook"
+  # get "/webhook", to: "webhooks#webhook"
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 end
