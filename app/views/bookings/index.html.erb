@@ -10,8 +10,10 @@
               <%= booking.camel.name %> for a
               <%= booking.camel.purpose %>
               <%# // add date request here %>
-              <%= "#{booking.camel.price} €" %>
-              <%# How to calculate the price accordingly to the dates  %>
+              <br>
+              Date: How to link the dates here?
+              <br>
+              Price: <%= "#{booking.camel.price} €" %> --> does this automatically calculate the <br> amount if rented for several days?
               <br>
               <button name="Access the request" type="submit" class="btn btn-flat">
                 <%= link_to "Go to request", edit_booking_path(booking) %>
