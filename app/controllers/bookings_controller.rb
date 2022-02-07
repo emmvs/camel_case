@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking.camel = @camel
     @booking.user = current_user
     @booking.camel_sku = @camel.sku
-    @booking.amount = @camel.price
+    @booking.amount = @camel.price_cents
     authorize @booking
 
     if @booking.save

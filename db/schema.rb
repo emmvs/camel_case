@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_03_231004) do
+ActiveRecord::Schema.define(version: 2022_02_07_015631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2022_02_03_231004) do
     t.string "camel_sku"
     t.integer "amount_cents", default: 0, null: false
     t.string "checkout_session_id"
+    t.string "payment_id"
     t.index ["camel_id"], name: "index_bookings_on_camel_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end

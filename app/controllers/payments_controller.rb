@@ -6,20 +6,20 @@ class PaymentsController < ApplicationController
       id: session_id,
       expand: ['setup_intent']
     )
-    if @booking.status == "Accepted"
-    payment = Stripe::PaymentIntent.create(
-      customer: customer_id,
-      payment_method: payment_method_id,
-      amount: amount,
-      currency: 'eur',
-      confirm: true,
-    )
-    @booking.paid!
-    redirect_to camels_path
+    payment_method_id = session.setup_intent.payment_method
+    customer_id = session.customer
+    amount = @booking.amount_cents
+      if @booking.status == "accepted"
+        payment = Stripe::PaymentIntent.create(
+          customer: customer_id,
+          payment_method: payment_method_id,
+          amount: amount,
+          currency: 'eur',
+          confirm: true,
+        )
+        @booking.update(payment_id: payment.id)
+        redirect_to camels_path
     else
-      cancel = Stripe::SetupIntent.cancel(
-       session_id,
-      )
       @booking.cancelled!
       redirect_to camels_path
     end
