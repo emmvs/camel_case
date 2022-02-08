@@ -3,7 +3,7 @@
 <h1 class="title">In what City do you want to rent your Camel?</h1>
 
 <!-- [...] -->
-<%= form_tag camels_path, method: :get do %>
+<%= form_tag camels_path, class: "searchbar", method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
