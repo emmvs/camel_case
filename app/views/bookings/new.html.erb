@@ -7,7 +7,7 @@
 
 <h2>Your choice</h2>
 <%= @camel.name %>
-<%= "#{@camel.price} €" %>
+<%= humanized_money_with_symbol(@camel.price) %>
 <%= @camel.purpose %>
 <%= cl_image_tag @camel.photo.key, height: 300, width: 400, crop: :fill %>
 

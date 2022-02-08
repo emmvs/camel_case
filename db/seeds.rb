@@ -10,12 +10,8 @@ require "open-uri"
 
 puts "Cleaning Database! 🧹"
 
-<<<<<<< HEAD
-Camel.destroy_all if Rails.env.development?
-=======
 Camel.destroy_all
 User.destroy_all
->>>>>>> master
 
 puts "Database is clean! 🧼"
 
