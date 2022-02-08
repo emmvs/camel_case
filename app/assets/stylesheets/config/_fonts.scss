@@ -1,9 +1,21 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Rowdies:wght@300;400&display=swap');
+@import "colors";
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+// $body-font: "Work Sans", "Helvetica", "sans-serif";
+// $headers-font: "Nunito", "Helvetica", "sans-serif";
+
+$body-font: "Poppins", "Helvetica", "sans-serif";
+$headers-font: "Rowdies", "Helvetica", "sans-serif";
+// CamelCase
+$primary-font: "Rowdies", "Helvetica", "sans-serif"; // 300, 400
+$secondary-font: "Poppins", "Helvetica", "sans-serif"; // 300, 400, 600
+$font-color: #18191a;
+$font-weigh--light: 300;
+$font-weigh--normal: 400;
+$font-weigh--bold: 600;
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
@@ -14,3 +26,54 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+//h1, h3
+.font-alpha,
+.font-delta {
+  font-family: $primary-font;
+}
+
+//h2,h4,h5,h6
+.font-beta,
+.font-gamma,
+h5,
+h6,
+p {
+  font-family: $secondary-font;
+}
+
+p {
+  color: $font-color;
+}
+
+// Heading 1
+.font-alpha {
+  font-weight: $font-weigh--normal;
+  color: $primary-color;
+  font-size: 300%;
+  margin-bottom: 2rem;
+}
+
+// Heading 2
+.font-beta {
+  font-weight: $font-weigh--bold;
+  color: $secondary-color;
+  font-size: 250%;
+  margin-bottom: 1.5rem;
+}
+
+// Heading 3, Form-header
+.font-delta {
+  font-weight: $font-weigh--normal;
+  color: $primary-color;
+  font-size: 200%;
+  margin-bottom: 1rem;
+}
+
+// Heading 4, Card-header
+.font-gamma {
+  font-weight: $font-weigh--normal;
+  color: $secondary-color;
+  font-size: 150%;
+  margin-bottom: 1rem;
+}
