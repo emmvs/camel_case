@@ -3,6 +3,11 @@ class CamelsController < ApplicationController
   before_action :policy_scope_camels, only: [:index, :show, :new]
 
   def index
+    if params[:query].present?
+      @camels = Camel.search_by_city(params[:query])
+    else
+      @camels = Camel.all
+    end
   end
 
   def show
