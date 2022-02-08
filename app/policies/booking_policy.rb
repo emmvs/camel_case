@@ -11,6 +11,6 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    user.bookings_as_owner
   end
 end
