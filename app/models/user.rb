@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   validates :first_name, :last_name, :phone_number, presence: true
 
-  enum payment_information: { no_details: 0, details_available: 1 }
+  enum payment_information: { no_details: 0, pending: 1, details_available: 2 }
 end
