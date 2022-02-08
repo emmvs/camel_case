@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :camels, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :bookings_as_owner, through: :camels, source: :bookings
   validates :first_name, :last_name, :phone_number, presence: true
 
   enum payment_information: { no_details: 0, pending: 1, details_available: 2 }
