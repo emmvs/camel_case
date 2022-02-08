@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :find_camel, except: [:edit, :update]
+  before_action :find_camel, except: [:edit, :update, :index]
 
   def new
     @booking = Booking.new
+    @camels = policy_scope(Camel)
     authorize @booking
   end
 
@@ -28,6 +29,7 @@ class BookingsController < ApplicationController
   def edit
     @booking = Booking.find(params[:id])
     authorize @booking
+    @camels = policy_scope(Camel)
   end
 
   def update
@@ -47,6 +49,11 @@ class BookingsController < ApplicationController
   #   @booking.update(request_params)
   #   authorize @booking
   # end
+
+  def index
+    @bookings = policy_scope(Booking)
+    @camels = policy_scope(Camel)
+  end
 
   private
 

@@ -10,7 +10,12 @@ require "open-uri"
 
 puts "Cleaning Database! 🧹"
 
+<<<<<<< HEAD
 Camel.destroy_all if Rails.env.development?
+=======
+Camel.destroy_all
+User.destroy_all
+>>>>>>> master
 
 puts "Database is clean! 🧼"
 
@@ -35,6 +40,14 @@ all_purpose = [
   "wedding"]
 
 e = 0
+
+  user = User.create!(
+    first_name: Faker::FunnyName.name,
+    last_name: Faker::FunnyName.name,
+    phone_number: "+491065666789",
+    email: "emma@test.com",
+    password: "123456",
+  )
 
 10.times do
   camel = Camel.create!(

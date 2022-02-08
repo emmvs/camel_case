@@ -1,6 +1,12 @@
 // Specific CSS for your home-page
 h1, p {
   text-align: center;
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', serif;
+  color: black;
+  font-size: 30px;
+  padding: 5px;
+  margin-bottom: 0px;
 }
 
 .flex-container {
@@ -19,5 +25,63 @@ h1, p {
 
 .flex-item {
   grid-template-columns: 1fr 1fr 1fr;
-  align-self: center;
+  align-content: space-around;
+  width: 165px;
+  height: 190px;
+  display: block;
+  border: solid;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+// searchbar
+
+.searchbar {
+  width: 30%;
+  background: white;
+  position: relative;
+  top: 30%;
+  left: 35%;
+  display: flex;
+  align-items: center;
+
+  p {
+    flex-grow:1;
+    margin:0;
+  }
+}
+
+.search-form-control {
+  position: relative;
+  width: 30%;
+  background: white;
+  position: relative;
+  top: 30%;
+  left: 35%;
+  display: flex;
+  align-items: center;
+
+  p {
+    flex-grow:1;
+    margin:0;
+  }
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+}
+
+.search-form-control .form-control:focus {
+  border: 1px solid #1EDD88;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
