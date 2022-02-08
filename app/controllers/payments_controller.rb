@@ -1,7 +1,7 @@
 class PaymentsController < ApplicationController
   def start
     @booking = Booking.find(params[:id])
-    amount = @booking.amount_cents
+    amount = @booking.amount_cents / 100
     if @booking.status == "accepted"
       payment = Stripe::PaymentIntent.create(
         customer: @booking.user.payment_customer_id,
