@@ -41,15 +41,32 @@
 }
 
 
-.btn-form {
+.btn-primary {
   color: white;
   padding: 8px 24px;
-  border-radius: 4px;
-  background: #fcc160;
+  border-radius: $border-radius-sm;
+  background: $primary-color;
   transition: background 0.3s ease;
 }
 
-.btn-form:hover {
-  background: #fbb52e;
+.btn-primary:hover {
+  background: $primary-color--dark;
   color: white;
+}
+
+.btn-secondary {
+  color: white;
+  padding: 8px 24px;
+  border-radius: $border-radius-sm;
+  background: $secondary-color;
+  transition: background 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: $secondary-color--dark;
+  color: white;
+}
+
+.btn {
+  border: none;
 }
