@@ -50,7 +50,7 @@ e = 0
     name: Faker::FunnyName.name,
     age: rand(1..41),
     description: all_desctription.sample,
-    price: rand(1000..10_000),
+    price: rand(1_000..10_000),
     city: Faker::Address.country,
     purpose: all_purpose.sample,
     user: User.first
