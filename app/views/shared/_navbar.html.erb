@@ -11,23 +11,23 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active camel-item">
-            <%= link_to "Home", "/home", class: "nav-link" %>
+          <li class="nav-item camel-item">
+            <%= link_to "Home", "/home", class: "nav-link camel-link" %>
           </li>
           <li class="nav-item camel-item">
-            <%= link_to "All Camels", "/camels", class: "nav-link" %>
+            <%= link_to "All Camels", "/camels", class: "nav-link camel-link" %>
           </li>
           <li class="nav-item camel-item">
             <% if @camels && @camels.any? %>
-              <%= link_to "Camel Roulette", "/camels/#{@camels.sample.id}", class: "nav-link" %>
+              <%= link_to "Camel Roulette", "/camels/#{@camels.sample.id}", class: "nav-link camel-link" %>
             <% end %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/emmvs", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { "toggle" => "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Add a new Camel", "/camels/new", class: "dropdown-item" %>
-              <%= link_to "Bookings", "/bookings", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Add a new Camel", "/camels/new", class: "dropdown-item camel-dropdown" %>
+              <%= link_to "Bookings", "/bookings", class: "dropdown-item camel-dropdown" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item camel-dropdown" %>
             </div>
           </li>
         <% else %>
