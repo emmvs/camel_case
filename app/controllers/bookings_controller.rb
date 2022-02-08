@@ -14,7 +14,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.camel = @camel
     @booking.user = current_user
-    @booking.camel_sku = @camel.sku
     @booking.amount = @camel.price_cents
     authorize @booking
 

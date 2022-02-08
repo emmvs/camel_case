@@ -48,7 +48,6 @@ e = 0
   )
   photo = URI.open('https://source.unsplash.com/collection/9894242')
   camel.photo.attach(io: photo, filename: "camel#{e}.png", content_type: 'image/png')
-  camel.sku = "camel#{e}"
   camel.save!
   puts "Camel #{camel.id} is created 🐫"
   e = e + 1
