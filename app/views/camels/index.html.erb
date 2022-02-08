@@ -5,8 +5,8 @@
           <% @camels.each do |camel| %>
             <div class="camel-card">
               <p><%= link_to "#{camel.name}", camel_path(camel), class: "camel_link" %></p>
-              <p><%= camel.age %></p>
-              <p><%= camel.price %></p>
+              <p><%= camel.age %> years old</p>
+              <p><%= camel.price %> €</p>
               <p><%= camel.city %></p>
               <%= cl_image_tag camel.photo.key, height: 300, width: 300, crop: :fill, class: "camel-photo" %>
             </div>

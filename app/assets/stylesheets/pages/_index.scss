@@ -12,6 +12,8 @@
 .camel-card {
   padding: 12px;
   border: solid cornflowerblue;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 20px;
 }
 
 .camel-photo {
@@ -22,6 +24,13 @@
   position: relative;
   left: 24%;
 }
+
+.camel-card p {
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+}
+
 
 .img {
   vertical-align: middle;
