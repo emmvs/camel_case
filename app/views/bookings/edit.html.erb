@@ -1,12 +1,12 @@
 <h1><%= "Bookingnumber #{@booking.id}" %></h1>
 
 <%= simple_form_for(@booking) do |f| %>
-  <%= f.select :status, [:accepted, :declined] %>
+  <%= f.select :status, [:Accept, :Decline] %>
   <%= f.submit "Continue" %>
 <% end %>
 
 <h2>Your booking</h2>
 <%= @booking.camel.name %>
-<%= "#{@booking.camel.price} €" %>
+<%= humanized_money_with_symbol(@booking.camel.price) %>
 <%= @booking.camel.purpose %>
 <%= cl_image_tag @booking.camel.photo.key, height: 300, width: 400, crop: :fill %>
