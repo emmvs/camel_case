@@ -29,7 +29,7 @@
               <%= link_to "Camel Roulette", "/camels/#{@camels.sample.id}", class: "nav-link" %>
             <% end %>
           </li>
-          <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+          <%# <%= link_to "Log Out", destroy_user_session_path, method: :delete %> %>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/emmvs", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
