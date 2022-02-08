@@ -20,7 +20,7 @@ class CamelsController < ApplicationController
     @camel.user = current_user
     authorize @camel
     if @camel.save
-      redirect_to camels_path
+      redirect_to @camel
     else
       #raise
       render :new
