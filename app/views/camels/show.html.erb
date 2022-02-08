@@ -24,7 +24,7 @@
           <h4 class="details-headline">Details</h4>
           <div class="details-camel">
             <p class="camel-purpose"> <%= "Purpose: #{@camel.purpose}" %></p>
-            <p class="camel-price"> <%= "Price: #{@camel.price} €" %></p>
+            <p class="camel-price"> <%= "Price: #{humanized_money_with_symbol(@camel.price)}" %></p>
             <p class="camel-city"> <%= "Location: #{@camel.city}" %></p>
             <p class="camel-age"> <%= "Age: #{@camel.age}" %></p>
           </div>

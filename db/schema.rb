@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_03_185827) do
+ActiveRecord::Schema.define(version: 2022_02_08_003737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,9 @@ ActiveRecord::Schema.define(version: 2022_02_03_185827) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "status", default: 0
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.string "payment_id"
     t.index ["camel_id"], name: "index_bookings_on_camel_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -59,12 +62,12 @@ ActiveRecord::Schema.define(version: 2022_02_03_185827) do
     t.string "name"
     t.integer "age"
     t.text "description"
-    t.integer "price"
     t.string "city"
     t.string "purpose"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_camels_on_user_id"
   end
 
@@ -79,6 +82,9 @@ ActiveRecord::Schema.define(version: 2022_02_03_185827) do
     t.string "first_name"
     t.string "last_name"
     t.string "phone_number"
+    t.string "payment_customer_id"
+    t.string "payment_method_id"
+    t.integer "payment_information", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
