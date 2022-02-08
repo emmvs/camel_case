@@ -3,7 +3,7 @@
 <h2>Amazing Camel Request</h2>
 <%# How to link the following to the request made by the user? %>
 <% @bookings.each do |booking| %>
-  <% if booking.status == "pending" %>
+  <% if booking.status == "confirmed" %>
     <%= booking.user.first_name %> would like to rent your amazing camel
     <%= booking.camel.name %> for a
     <%= booking.camel.purpose %>
