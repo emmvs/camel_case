@@ -3,6 +3,11 @@ class CamelsController < ApplicationController
   before_action :policy_scope_camels, only: [:index, :show, :new]
 
   def index
+    if params[:query].present?
+      @camels = Camel.search_by_city(params[:query])
+    else
+      @camels = Camel.all
+    end
   end
 
   def show
@@ -20,7 +25,7 @@ class CamelsController < ApplicationController
     @camel.user = current_user
     authorize @camel
     if @camel.save
-      redirect_to camels_path
+      redirect_to @camel
     else
       #raise
       render :new

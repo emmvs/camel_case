@@ -1,47 +1,41 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <%= link_to "/home", class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/dk5glvhr6/image/upload/v1644070424/CamelCase-3_o4eypu.png", class: "navbar-logo" %>
+      <%= image_tag "https://res.cloudinary.com/dk5glvhr6/image/upload/v1644351274/Camel_case_1_itf5tg.png", class: "navbar-logo" %>
     <% end %>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <%# if user_signed_in? %>
-          <li class="nav-item active">
+        <% if user_signed_in? %>
+          <li class="nav-item active camel-item">
             <%= link_to "Home", "/home", class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Camels", "/camels", class: "nav-link" %>
+          <li class="nav-item camel-item">
+            <%= link_to "All Camels", "/camels", class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "New Camel", "/camels/new", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Bookings", "/bookings", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%# chosen_camel = @camels.sample.id %>
-            <% if @camels %>
+          <li class="nav-item camel-item">
+            <% if @camels && @camels.any? %>
               <%= link_to "Camel Roulette", "/camels/#{@camels.sample.id}", class: "nav-link" %>
             <% end %>
           </li>
+          <%# <%= link_to "Log Out", destroy_user_session_path, method: :delete %> %>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/emmvs", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/emmvs", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { "toggle" => "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Add a new Camel", "/camels/new", class: "dropdown-item" %>
+              <%= link_to "Bookings", "/bookings", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
-        <%# else %>
-          <!--li class="nav-item"-->
-            <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
-          <!--/li-->
-        <%# end %>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

@@ -17,7 +17,16 @@
 }
 
 .navbar-logo {
-  height: 100px;
+  height: 130px;
   position: relative;
-  left: 60%;
+  left: 0%;
+}
+
+.dropdown-menu {
+  left: unset !important;
+  right: 2%;
+}
+
+.camel-item {
+  margin: 0 1.5rem;
 }
