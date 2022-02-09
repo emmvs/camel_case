@@ -7,14 +7,20 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
+  def show
+    @booking = current_user.bookings.find(params[:id])
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.camel = @camel
     @booking.user = current_user
+    @booking.amount = @camel.price_cents
     authorize @booking
 
     if @booking.save
-      redirect_to camel_path(@camel)
+      @booking.pending!
+      redirect_to checkout_path(@booking)
     else
       render :new
     end
@@ -28,15 +34,26 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(request_params)
+    if params["booking"]["status"] == "Accept"
+      @booking.accepted!
+      redirect_to payment_path(@booking)
+    elsif params["booking"]["status"] == "Decline"
+      @booking.declined!
+      redirect_to payment_path(@booking)
+    end
     authorize @booking
   end
+
+  # def update
+  #   @booking = Booking.find(params[:id])
+  #   @booking.update(request_params)
+  #   authorize @booking
+  # end
 
   def index
     @bookings = policy_scope(Booking)
     @camels = policy_scope(Camel)
   end
-
 
   private
 
@@ -48,7 +65,7 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:check_in, :check_out)
   end
 
-  def request_params
-    params.require(:booking).permit(:status)
-  end
+  # def request_params
+  #   params.require(:booking).permit(:status)
+  # end
 end
