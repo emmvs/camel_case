@@ -4,17 +4,21 @@
 <%# How to link the following to the request made by the user? %>
 <% @bookings.each do |booking| %>
   <% if booking.status == "confirmed" %>
-    <%= booking.camel.user.first_name %> would like to rent your amazing camel
-    <%= booking.camel.name %> for a
-    <%= booking.camel.purpose %>
-    <%= cl_image_tag booking.camel.photo.key, height: 150, width: 200, crop: :fill %>
-    <%# // add date request here %>
-    <%= humanized_money_with_symbol(booking.camel.price) %>
-    <%# How to calculate the price accordingly to the dates  %>
-    <button name="Access the request" type="submit" class="btn btn-flat">
-      <%= link_to "Go to request", edit_booking_path(booking) %>
-    </button>
-    <br>
-    <br>
+    <% if Time.now - booking.created_at < 86_400 %>
+      <%= booking.camel.user.first_name %> would like to rent your amazing camel
+      <%= booking.camel.name %> for a
+      <%= booking.camel.purpose %>
+      <%= cl_image_tag booking.camel.photo.key, height: 150, width: 200, crop: :fill %>
+      <%# // add date request here %>
+      <%= humanized_money_with_symbol(booking.camel.price) %>
+      <%# How to calculate the price accordingly to the dates  %>
+      <button name="Access the request" type="submit" class="btn btn-flat">
+        <%= link_to "Go to request", edit_booking_path(booking) %>
+      </button>
+      <br>
+      <br>
+    <% else %>
+      <% booking.cancelled! %>
+    <% end %>
   <% end %>
 <% end %>
