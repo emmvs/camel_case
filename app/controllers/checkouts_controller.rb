@@ -3,7 +3,7 @@ class CheckoutsController < ApplicationController
     @booking = Booking.find(params[:id])
     if @booking.user.payment_information == "details_available"
       @booking.confirmed!
-      redirect_to camels_path
+      redirect_to success_path
     elsif @booking.user.payment_information == "pending"
       @session = create_checkout(@booking.user.payment_customer_id)
       @booking.update(checkout_session_id: @session.id)
@@ -18,13 +18,16 @@ class CheckoutsController < ApplicationController
     end
   end
 
+  def success
+  end
+
   private
 
   def create_checkout(customer_id)
     Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       mode: 'setup',
-      success_url: "#{root_url}camels",
+      success_url: "#{root_url}checkout/success",
       cancel_url: "#{root_url}camels",
       customer: customer_id
     )

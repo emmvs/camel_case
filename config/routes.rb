@@ -19,4 +19,6 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [ :edit, :update, :index ]
   # get 'camels/index', to: "camels#index"
+
+  get "checkout/success", to: "checkouts#success", as: "success"
 end

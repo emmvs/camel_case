@@ -1,0 +1,43 @@
+.success-headline {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.success-subheadline {
+  font-size: 24px;
+}
+
+.success-info {
+  font-size: 24px;
+}
+
+.success-action {
+  font-size: 24px;
+}
+
+.success-cta {
+  background-color: black;
+  color: white;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-right: 56px;
+  padding-left: 56px;
+  border-radius: 4px;
+  bottom: 0px;
+  right: 72px;
+  font-size: 20px;
+}
+
+.success-cta:hover {
+  text-decoration: none;
+  color: lightgrey;
+}
+
+.success-text {
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+
+.success-container {
+  margin: 0;
+}
