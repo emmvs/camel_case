@@ -10,42 +10,88 @@
 }
 
 .camel-card {
-  padding: 12px;
-  border: solid #fbbb5c;
+  display: flex;
+  align-items: center;
+  max-width: 25rem;
+  width: 100%;
+  height: 38rem;
+  flex-direction: column;
+  padding: 0;
+  background-color: $bg-light;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+  font-family: $secondary-font;
+}
+
+.camel-card p {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
 }
 
 .camel-photo {
   width: 100%;
-  max-width: 200px;
+  max-width: 400px;
   height: auto;
-  margin-bottom: 10px;
-  position: relative;
-  left: 24%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 1rem;
 }
 
-.camel-card h2 {
-  font-size: 22px;
-  font-style: bold;
-  line-height: 1.4;
-  opacity: .7;
-  text-align: center;
-  color: #5f18ea;
+.camel-info {
+  align-self: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1rem;
+  text-align: left;
+  align-items: baseline;
 }
 
-.camel-card a{
-  color: #5f18ea;
+.camel_city {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  font-size: 90%;
+  margin-bottom: 1rem !important;
 }
-.camel-card p {
-  font-size: 20px;
-  line-height: 1.4;
-  opacity: .7;
+
+.camel_title {
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+.camel_type {
+  grid-column: 3 / 3;
+  grid-row: 1;
+  font-size: 1rem;
+  color: $primary-color--light;
+}
+
+.camel_age {
+  grid-column: 3 / 3;
+  grid-row: 2;
+  font-size: 100%;
+  margin-left: 1rem !important;
+}
+
+.age-note {
+  color: $primary-color--light;
+  font-weight: $font-weigh--bold;
+}
+
+.camel_price {
+  grid-column: 1 / 3;
+  grid-row: 3;
+  font-weight: $font-weigh--bold;
+  color: $secondary-color--dark;
 }
 
 
-.img {
-  vertical-align: middle;
-  border-style: none;
+.camel-link:hover {
+  text-decoration: none;
+}
+
+.camel-card:hover {
+  background-color: rgba(250, 188, 95, 0.3);
+  color: $primary-color;
 }
