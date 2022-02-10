@@ -54,7 +54,7 @@ class CamelsController < ApplicationController
   end
 
   def camel_params
-    params.require(:camel).permit(:name, :age, :description, :price, :city, :purpose, :photo)
+    params.require(:camel).permit(:name, :camel_type, :age, :description, :price, :city, :purpose, :photo)
   end
 
   def policy_scope_camels

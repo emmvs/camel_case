@@ -67,7 +67,7 @@
   color: $primary-color--light;
 }
 
-.camel_age {
+.camel--age {
   grid-column: 3 / 3;
   grid-row: 2;
   font-size: 100%;
@@ -79,7 +79,7 @@
   font-weight: $font-weigh--bold;
 }
 
-.camel_price {
+.camel--price {
   grid-column: 1 / 3;
   grid-row: 3;
   font-weight: $font-weigh--bold;

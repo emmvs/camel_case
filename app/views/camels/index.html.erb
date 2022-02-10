@@ -12,8 +12,8 @@
 </svg>&nbsp;<%= camel.city %></p>
                   <h3 class="camel_title font-delta"><%= camel.name %></h3>
                   <p class="camel_type"><%= camel.camel_type %></p>
-                  <p class="camel_age"><span class="age-note"><%= camel.age%></span> years old</p>
-                  <p class="camel_price"><%= humanized_money_with_symbol(camel.price) %></p>
+                  <p class="camel_age camel--age"><span class="age-note"><%= camel.age%></span> years old</p>
+                  <p class="camel_price camel--price"><%= humanized_money_with_symbol(camel.price) %></p>
                 </div>
               </div>
             <% end %>
