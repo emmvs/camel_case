@@ -37,11 +37,19 @@ all_purpose = [
 
 e = 0
 
-  user = User.create!(
+  User.create!(
     first_name: Faker::FunnyName.name,
     last_name: Faker::FunnyName.name,
     phone_number: "+491065666789",
     email: "emma@test.com",
+    password: "123456",
+  )
+
+  User.create!(
+    first_name: Faker::FunnyName.name,
+    last_name: Faker::FunnyName.name,
+    phone_number: "+491065666789",
+    email: "dustin@test.com",
     password: "123456",
   )
 
@@ -50,7 +58,7 @@ e = 0
     name: Faker::FunnyName.name,
     age: rand(1..41),
     description: all_desctription.sample,
-    price: rand(1000..10_000),
+    price: rand(1_000..10_000),
     city: Faker::Address.country,
     purpose: all_purpose.sample,
     user: User.first

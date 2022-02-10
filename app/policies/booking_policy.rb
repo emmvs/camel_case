@@ -1,7 +1,8 @@
 class BookingPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      # scope.all
+      user.bookings_as_owner
     end
   end
 
@@ -10,6 +11,6 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    user.bookings_as_owner
   end
 end
