@@ -45,3 +45,39 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.request-card {
+  overflow: hidden;
+  height: 140px;
+  margin: 0px 220px ;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.request-card img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.request-card h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.request-card p {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  text-align: left;
+}
+
+.request-card .request-card-infos {
+  padding: 16px;
+}
