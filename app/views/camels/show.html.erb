@@ -7,7 +7,7 @@
         <%= cl_image_tag @camel.photo.key, height: 300, width: 300, crop: :fill, class: "camel-avatar" %>
       </div>
       <div class="new-boking">
-        <%= link_to "Book", new_camel_booking_path(@camel), class: "cta-booking"%>
+        <%= link_to "Book", new_camel_booking_path(@camel), class: "cta-booking cta-primary"%>
       </div>
     </div>
       <div class="camel-box">
@@ -19,14 +19,23 @@
             <h2 class="intro">A bit more about this camel...</h2>
             <p class="description-text"> <%= @camel.description %></p>
           </div>
+          <div>
+            <% if policy(@camel).edit? %>
+              <%= link_to "update", edit_camel_path(@camel), class:"btn btn-flat" %>
+            <% end %>
+            <% if policy(@camel).destroy? %>
+              <%= link_to "delete", camel_path(@camel), class:"btn btn-secondary", method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
+            <% end %>
+          </div>
         </div>
         <div class="details">
           <h4 class="details-headline">Details</h4>
           <div class="details-camel">
+            <p class="camel-city"> <%= "City: #{@camel.city}" %></p>
             <p class="camel-purpose"> <%= "Purpose: #{@camel.purpose}" %></p>
-            <p class="camel-price"> <%= "Price: #{humanized_money_with_symbol(@camel.price)}" %></p>
-            <p class="camel-city"> <%= "Location: #{@camel.city}" %></p>
             <p class="camel-age"> <%= "Age: #{@camel.age}" %></p>
+            <p class="camel-age"> <%= "Type: #{@camel.camel_type}" %></p>
+            <p class="camel-price"> <%= "Price: #{humanized_money_with_symbol(@camel.price)}" %></p>
           </div>
         </div>
     </div>

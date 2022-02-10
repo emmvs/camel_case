@@ -1,7 +1,9 @@
+@import "../config/fonts";
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  font-family: 'Times New Roman', serif;
+  font-family: $secondary-font;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -29,4 +31,38 @@
 
 .camel-item {
   margin: 0 1.5rem;
+  font-weight: $font-weigh--bold;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.camel-item:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 10px;
+  bottom: 2px;
+  right: 0;
+  opacity: 0;
+  background: $secondary-color;
+}
+
+.camel-link {
+  color: $primary-color !important;
+}
+
+
+@media (hover:hover) {
+  .camel-link:hover {
+    color: $primary-color--dark !important;
+  }
+
+  .camel-dropdown:hover {
+    background-color: $secondary-color--light;
+  }
+
+
+  .camel-item:hover:before {
+    opacity: 1;
+  }
 }

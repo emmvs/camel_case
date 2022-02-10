@@ -40,13 +40,13 @@
   color: white;
 }
 
-
 .btn-primary {
   color: white;
-  padding: 8px 24px;
-  border-radius: $border-radius-sm;
-  background: $primary-color;
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: #6421d3;
   transition: background 0.3s ease;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.5);
 }
 
 .btn-primary:hover {
@@ -69,4 +69,8 @@
 
 .btn {
   border: none;
+}
+
+.btn-request {
+  margin: 50px;
 }
