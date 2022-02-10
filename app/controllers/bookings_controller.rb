@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.camel = @camel
     @booking.user = current_user
-    time = (@booking.check_out - @booking.check_in).to_i
+    time = (@booking.check_out - @booking.check_in).to_i + 1
     @booking.amount = @camel.price_cents * time
     authorize @booking
 
