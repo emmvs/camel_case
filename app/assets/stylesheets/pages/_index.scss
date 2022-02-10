@@ -11,7 +11,9 @@
 
 .camel-card {
   padding: 12px;
-  border: solid cornflowerblue;
+  border: solid #fbbb5c;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 20px;
 }
 
 .camel-photo {
@@ -21,7 +23,27 @@
   margin-bottom: 10px;
   position: relative;
   left: 24%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
+.camel-card h2 {
+  font-size: 22px;
+  font-style: bold;
+  line-height: 1.4;
+  opacity: .7;
+  text-align: center;
+  color: #5f18ea;
+}
+
+.camel-card a{
+  color: #5f18ea;
+}
+.camel-card p {
+  font-size: 20px;
+  line-height: 1.4;
+  opacity: .7;
+}
+
 
 .img {
   vertical-align: middle;
