@@ -1,0 +1,74 @@
+.request-container {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+.request-headline {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.request-details {
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  width: 800px;
+  justify-content: space-around;
+  border: solid #fbbb5c;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.request-details-info {
+  margin-right: 54px;
+  text-align: left;
+}
+
+.request-booking-name {
+  font-size: 40px;
+  font-weight: bold;
+  color: #5f18ea;
+  font-family: $headers-font;
+}
+
+.request-booking-price {
+  font-size: 16px;
+  text-align: left;
+  font-family: $body-font;
+}
+
+.request-booking-purpose {
+  font-size: 16px;
+  text-align: left;
+  font-family: $body-font;
+}
+
+.request-booking-age {
+  font-size: 16px;
+  text-align: left;
+  font-family: $body-font;
+}
+
+.request-booking-time {
+  font-size: 16px;
+  text-align: left;
+  font-family: $body-font;
+}
+
+.request-booking-photo {
+  border-radius: 4px;
+}
+
+.request-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.request-dropdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
