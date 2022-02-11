@@ -36,6 +36,7 @@ body {
   padding-bottom: 104px;
   margin-bottom: 48px;
   border-radius: 4px;
+  position: relative;
 }
 
 .details {
@@ -64,8 +65,19 @@ body {
   background-position: center;
 }
 
+.camel-image {
+  overflow: hidden;
+}
+
 .camel-avatar {
   border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform .6s ease;
+}
+
+.camel-avatar:hover {
+  transform: scale(1.15);
+	cursor: pointer;
 }
 
 .camel-box {
@@ -79,7 +91,7 @@ body {
 }
 
 .cta-booking {
-  background-color: black;
+  background-color: $primary-color--dark;
   color: white;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -93,21 +105,35 @@ body {
 
 .cta-booking:hover {
   text-decoration: none;
-  color: lightgrey;
+  color: white;
+  background-color: $primary-color;
 }
 
-.camel-purpose {
+.camel-purpose,
+.description-text,
+.details-camel p {
+  font-size: 100%;
+}
+
+.camel-purpose,
+.details-camel p {
   text-align: left;
+}
+
+.camel-buttons {
+  margin-top: 1rem;
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.detail-icon {
+  color: $secondary-color;
 }
 
 .camel-price {
-  text-align: left;
-}
-
-.camel-city {
-  text-align: left;
-}
-
-.camel-age {
-  text-align: left;
+  margin-top: 2rem;
+  font-size: 200% !important;
+  font-weight: $font-weigh--bold;
+  color: $secondary-color--dark;
 }
