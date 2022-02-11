@@ -4,8 +4,8 @@
     <div class="booking-select">
       <%= simple_form_for [@camel, @booking] do |f| %>
       <div class="checks">
-        <%= f.input :check_in, class: "booking-check-in" %>
-        <%= f.input :check_out, class: "booking-check-out" %>
+        <%= f.input :check_in, as: :string, input_html: { class: "datepicker" } %>
+        <%= f.input :check_out, as: :string, input_html: { class: "datepicker" } %>
       </div>
       <%= f.button :submit, "Book", class: "booking-cta" %>
     <% end %>
