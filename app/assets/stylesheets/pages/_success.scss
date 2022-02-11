@@ -16,7 +16,7 @@
 }
 
 .success-cta {
-  background-color: black;
+  background-color: $primary-color;
   color: white;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -30,7 +30,8 @@
 
 .success-cta:hover {
   text-decoration: none;
-  color: lightgrey;
+  background-color: $primary-color--dark;
+  color: white;
 }
 
 .success-text {

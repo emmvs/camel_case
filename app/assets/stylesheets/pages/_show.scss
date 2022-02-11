@@ -91,7 +91,7 @@ body {
 }
 
 .cta-booking {
-  background-color: $primary-color--dark;
+  background-color: $primary-color;
   color: white;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -106,7 +106,7 @@ body {
 .cta-booking:hover {
   text-decoration: none;
   color: white;
-  background-color: $primary-color;
+  background-color: $primary-color--dark;
 }
 
 .camel-purpose,
