@@ -19,3 +19,83 @@
   padding: 2rem;
   margin: 0 !important;
 }
+
+.booking-container {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+.booking-headline {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.booking-select-box {
+  display: flex;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  margin-bottom: 32px;
+  width: 1000px;
+  justify-content: center;
+  border: solid #fbbb5c;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.booking-select {
+  width: 800px;
+}
+
+// .booking-details-info {
+//   margin-right: 54px;
+//   text-align: left;
+// }
+
+// .camel-booking-name {
+//   font-size: 40px;
+//   font-weight: bold;
+//   color: #5f18ea;
+//   font-family: $headers-font;
+// }
+
+// .camel-booking-city {
+//   font-size: 16px;
+//   text-align: left;
+//   font-family: $body-font;
+// }
+
+// .camel-booking-age {
+//   font-size: 16px;
+//   text-align: left;
+//   font-family: $body-font;
+// }
+
+// .camel-booking-photo {
+//   border-radius: 4px;
+//   width: 50%;
+//   height: 50%;
+// }
+
+// .booking-box {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .booking-select-box {
+//   width: 800px;
+//   margin: 0 auto;
+// }
+
+// .camel-booking-price {
+//   font-size: 16px;
+//   text-align: left;
+//   font-family: $body-font;
+// }
+
+// .booking-select {
+//   margin-bottom: 32px;
+// }
+
+// .booking

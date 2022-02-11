@@ -1,14 +1,13 @@
-<h1>Book your camel</h1>
-<%= simple_form_for [@camel, @booking] do |f| %>
-<%= f.input :check_in %>
-<%= f.input :check_out %>
-<%= f.button :submit, "Book", id: 'book' %>
-<% end %>
-
-<h2>Your choice</h2>
-<%= @camel.name %>
-<%= humanized_money_with_symbol(@camel.price) %>
-<%= @camel.purpose %>
-<%= cl_image_tag @camel.photo.key, height: 300, width: 400, crop: :fill %>
-
-<%# <%= button_to "Book", checkout_create_path(@camel), remote: true %>
+<div class="booking-container">
+  <h1 class="booking-headline"><%= "🐪 Book your AMAZING camel 🐪" %></h1>
+  <div class="booking-select-box">
+    <div class="booking-select">
+      <%= simple_form_for [@camel, @booking] do |f| %>
+      <div class="checks">
+        <%= f.input :check_in, class: "booking-check-in" %>
+        <%= f.input :check_out, class: "booking-check-out" %>
+      </div>
+      <%= f.button :submit, "Book", class: "booking-cta" %>
+    <% end %>
+    </div>
+  </div>
