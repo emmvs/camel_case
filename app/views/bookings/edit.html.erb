@@ -4,7 +4,7 @@
   <div class="request-details">
     <div class="request-details-info">
         <p class="request-booking-name"><%= @booking.camel.name %></p>
-        <p class="request-booking-price"><%= "Amount: #{humanized_money_with_symbol(@booking.amount_cents / 100)}" %></p>
+        <p class="request-booking-price"><%= "Amount: #{humanized_money_with_symbol(@booking.amount_cents / 10000)}" %></p>
         <p class="request-booking-purpose"><%= "Purpose: #{@booking.camel.purpose}" %></p>
         <p class="request-booking-age"><%= "Age: #{@booking.camel.age}" %></p>
         <p class="request-booking-time"><%= "Days: #{(@booking.check_out - @booking.check_in).to_i + 1}"%></p>
