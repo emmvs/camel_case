@@ -22,8 +22,7 @@
 </div>
 </div>
 <div class="countdown">
-<% @booking.created_at, id:"time-id" %>
-<div class="time-details">
+<div class="time-details" id="time_id" data-time="<%= @booking.created_at %>">
   <div class="container-time">
     <div class="container-hour">
       <p class="hour">Hour :</p>
