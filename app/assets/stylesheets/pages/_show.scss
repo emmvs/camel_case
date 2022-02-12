@@ -5,6 +5,7 @@ body {
 .camel-name {
   font-size: 32px;
   text-align: left;
+  padding-top: 32px;
 }
 
 .intro {
@@ -14,6 +15,8 @@ body {
 .description-text {
   font-size: 12px;
   text-align: left;
+  padding-top: 16px;
+  padding-left: 0px;
 }
 
 .header-box {
@@ -137,4 +140,21 @@ body {
   font-size: 200% !important;
   font-weight: $font-weigh--bold;
   color: $secondary-color--dark;
+  padding-top: 16px;
+}
+
+.camel-city {
+  padding-top: 16px;
+}
+
+.camel-age {
+  padding-top: 8px;
+}
+
+.camel-type {
+  padding-top: 8px;
+}
+
+.camel-purpose {
+  padding-top: 8px;
 }
