@@ -24,3 +24,8 @@
 .form--link:hover {
   color: $font-color;
 }
+
+.form-adjust h1,
+.form-adjust p {
+  padding-top: 0;
+}

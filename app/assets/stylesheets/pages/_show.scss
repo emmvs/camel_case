@@ -138,3 +138,9 @@ body {
   font-weight: $font-weigh--bold;
   color: $secondary-color--dark;
 }
+
+.camel-box h1,
+.camel-box h4,
+.camel-box p {
+  padding: .2rem .4rem ;
+}
