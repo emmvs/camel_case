@@ -78,6 +78,7 @@ body {
 .camel-avatar:hover {
   transform: scale(1.15);
 	cursor: pointer;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .camel-box {
@@ -107,6 +108,7 @@ body {
   text-decoration: none;
   color: white;
   background-color: $primary-color;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .camel-purpose,

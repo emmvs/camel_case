@@ -10,6 +10,7 @@
 
 .btn-ghost:hover {
   opacity: 1;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .btn-flat {
@@ -23,6 +24,7 @@
 .btn-flat:hover {
   background: #47a9cf;
   color: white;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .btn-gradient {
@@ -38,6 +40,7 @@
 .btn-gradient:hover {
   background: linear-gradient(#147EFF, #0F67DA);
   color: white;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .btn-primary {
@@ -52,6 +55,7 @@
 .btn-primary:hover {
   background: $primary-color--dark;
   color: white;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .btn-secondary {
@@ -65,10 +69,14 @@
 .btn-secondary:hover {
   background: $secondary-color--dark;
   color: white;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .btn {
   border: none;
+    &.hover {
+    cursor: url(asset-path('camel.png')), auto !important;
+  }
 }
 
 .btn-request {
