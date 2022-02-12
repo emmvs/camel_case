@@ -138,28 +138,28 @@ body {
 }
 
 .camel-price {
-  margin-top: 2rem;
   font-size: 200% !important;
   font-weight: $font-weigh--bold;
   color: $secondary-color--dark;
-  padding-top: 16px;
+  // padding-top: 16px;
+  margin-bottom: 0;
 }
 
-.camel-city {
-  padding-top: 16px;
-}
+// .camel-city {
+//   padding-top: 16px;
+// }
 
-.camel-age {
-  padding-top: 8px;
-}
+// .camel-age {
+//   padding-top: 8px;
+// }
 
-.camel-type {
-  padding-top: 8px;
-}
+// .camel-type {
+//   padding-top: 8px;
+// }
 
-.camel-purpose {
-  padding-top: 8px;
-}
+// .camel-purpose {
+//   padding-top: 8px;
+// }
 
 .camel-box h1,
 .camel-box h4,
