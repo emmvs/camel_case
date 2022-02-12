@@ -2,29 +2,31 @@
 <br>
 
 <%# How to link the following to the request made by the user? %>
-<% @bookings.each do |booking| %>
-  <% if booking.status == "confirmed" %>
-    <% if Time.now - booking.created_at < 86_400 %>
-      <div class="request-card">
-        <%= cl_image_tag booking.camel.photo.key, height: 150, width: 200, crop: :fill %>
-        <div class="request-card-info">
-          <span class="request-booking-user"><%= booking.camel.user.first_name %></span>&nbsp;would like to rent<br>
-          <%= booking.camel.name%> for a
-          <%= booking.camel.purpose %> <br>
-          <span class="in-date">From:&nbsp;<%= booking.check_in.strftime("%B %d, %Y") %></span><br>
-          <span class="in-date">To:&nbsp;<%= booking.check_out.strftime("%B %d, %Y") %></span><br>
-          <%# // add date request here %>
-          <%= humanized_money_with_symbol(booking.camel.price) %>
+<div class="container">
+  <% @bookings.each do |booking| %>
+    <% if booking.status == "confirmed" %>
+      <% if Time.now - booking.created_at < 86_400 %>
+        <div class="request-card">
+          <%= cl_image_tag booking.camel.photo.key, height: 250, width: 250, crop: :fill %>
+          <div class="request-card-info">
+            <span class="request-booking-user"><%= booking.camel.user.first_name %></span>&nbsp;would like to rent<br>
+            <span class="request-camel-name"><%= booking.camel.name%></span> for a
+            <span class="request-camel-purpose"><%= booking.camel.purpose %></span><br>
+            <span class="request--date">From:&nbsp;<%= booking.check_in.strftime("%B %d, %Y") %></span><br>
+            <span class="request--date">To:&nbsp;<%= booking.check_out.strftime("%B %d, %Y") %></span><br>
+            <%# // add date request here %>
+            <span class="request--price"><%= humanized_money_with_symbol(booking.camel.price) %></span>
           </div>
-        <%# How to calculate the price accordingly to the dates  %>
-        <button name="Access the request" type="submit" class="btn btn-secondary request--link">
-          <%= link_to "Go to request", edit_booking_path(booking)%>
-        </button>
-        <br>
-        <br>
-      </div>
-    <% else %>
-      <% booking.declined! %>
+          <%# How to calculate the price accordingly to the dates  %>
+          <button name="Access the request" type="submit" class="btn btn-secondary">
+            <span class="request--link"><%= link_to "Go to request", edit_booking_path(booking)%></span>
+          </button>
+          <br>
+          <br>
+        </div>
+      <% else %>
+        <% booking.declined! %>
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
+</div>
