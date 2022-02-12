@@ -84,14 +84,14 @@
   margin-top: 8px;
 }
 
-.booking-cta-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .btn.booking-cta:hover {
   text-decoration: none;
   color: white;
   background-color: $primary-color--dark;
+}
+
+.booking-cta-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
