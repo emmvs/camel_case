@@ -1,12 +1,24 @@
-<h1>Book your camel</h1>
-<%= simple_form_for [@camel, @booking] do |f| %>
-<%= f.input :check_in %>
-<%= f.input :check_out %>
-<%= f.button :submit, "Book", id: 'book' %>
-<% end %>
-
-<h2>Your choice</h2>
-<%= @camel.name %>
-<%= humanized_money_with_symbol(@camel.price) %>
-<%= @camel.purpose %>
-<%= cl_image_tag @camel.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="booking-container">
+  <h1 class="booking-headline"><%= "🐪 Book your AMAZING camel 🐪" %></h1>
+  <div class="booking-select-box">
+    <div class="booking-select">
+    <div id='camel-booking-dates' data-unavailable="<%= @camel.unavailable_dates.to_json %>">
+    <% if current_user.id != @camel.user_id  %>
+      <%= simple_form_for [@camel, @booking] do |f| %>
+      <div class="checks">
+        <%= f.input :check_in, as: :string, type: :text %>
+        <%= f.input :check_out, as: :string, type: :text %>
+      </div>
+      <div class="booking-cta-box">
+        <div class="booking-cta">
+          <%= f.button :submit, "Book", class: "booking-cta" %>
+        </div>
+      </div>
+      <% end %>
+    <% else %>
+    <p class="error-owner">You can not rent your own AMAZING camel 🙈</p>
+    <% end %>
+    </div>
+    </div>
+  </div>
+</div>

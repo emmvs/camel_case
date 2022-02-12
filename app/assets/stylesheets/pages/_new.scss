@@ -14,15 +14,80 @@
   padding: 2rem;
   margin: 0 !important;
 }
-
-.form--link {
-  text-decoration: none;
-  color: $font-color;
-  margin-left: 1rem;
+.booking-container {
+  margin: 0 auto;
+  width: 1000px;
 }
 
-.form--link:hover {
-  color: $font-color;
+.booking-headline {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.booking-select-box {
+  display: flex;
+  align-items: center;
+  padding-top: 32px;
+  padding-bottom: 24px;
+  margin-bottom: 28px;
+  width: 1000px;
+  justify-content: center;
+  border: solid #fbbb5c;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.booking-select {
+  width: 800px;
+}
+
+// #booking_check_out.form-control.string.required {
+//   border-radius: 6px;
+// }
+
+.form-control.string.required {
+  border-radius: 6px;
+  background-color: white;
+}
+
+.form-control.string.required:focus {
+  outline: none !important;
+}
+
+// #booking_check_in {
+//   border-radius: 6px;
+// }
+
+#booking_check_out {
+  border-radius: 6px;
+  background-color: white;
+}
+
+#booking_check_out:focus {
+  outline: none !important;
+}
+
+.btn.booking-cta {
+  background-color: $primary-color;
+  color: white;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+.btn.booking-cta:hover {
+  text-decoration: none;
+  color: white;
+  background-color: $primary-color--dark;
+}
+
+.booking-cta-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-adjust h1,

@@ -1,12 +1,38 @@
-<h1><%= "Bookingnumber #{@booking.id}" %></h1>
-
-<%= simple_form_for(@booking) do |f| %>
-  <%= f.select :status, [:Accept, :Decline] %>
-  <%= f.submit "Continue" %>
-<% end %>
-
-<h2>Your booking</h2>
-<%= @booking.camel.name %>
-<%= humanized_money_with_symbol(@booking.camel.price) %>
-<%= @booking.camel.purpose %>
-<%= cl_image_tag @booking.camel.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="request-container">
+<h1 class="request-headline">🐪 Lend your AMAZING camel 🐪</h1>
+<div class="request-box">
+  <div class="request-details">
+    <div class="request-details-info">
+        <p class="request-booking-name"><%= @booking.camel.name %></p>
+        <p class="request-booking-price"><%= "Amount: #{humanized_money_with_symbol(@booking.amount_cents / 100)}" %></p>
+        <p class="request-booking-purpose"><%= "Purpose: #{@booking.camel.purpose}" %></p>
+        <p class="request-booking-age"><%= "Age: #{@booking.camel.age}" %></p>
+        <p class="request-booking-time"><%= "Days: #{(@booking.check_out - @booking.check_in).to_i + 1}"%></p>
+    </div>
+      <%= cl_image_tag @booking.camel.photo.key, height: 300, width: 400, crop: :fill, class: "request-booking-photo" %>
+  </div>
+</div>
+<div class="request-dropdown">
+  <div class="request-select">
+    <%= simple_form_for(@booking) do |f| %>
+      <%= f.select :status, [:Accept, :Decline], class: "request-select" %>
+      <%= f.submit "Continue", class: "request-cta" %>
+    <% end %>
+  </div>
+</div>
+</div>
+<div class="countdown">
+<div class="time-details" id="time_id" data-time="<%= @booking.created_at %>">
+  <div class="container-time">
+    <div class="container-hour">
+      <p class="hour">Hour :</p>
+    </div>
+    <div class="container-minute">
+      <p class="minute">&nbsp;Minute :</p>
+    </div>
+    <div class="container-second">
+      <p class="second">&nbsp;Second</p>
+    </div>
+  </div>
+</div>
+</div>
