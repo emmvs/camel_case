@@ -7,26 +7,43 @@
         <%= cl_image_tag @camel.photo.key, height: 300, width: 300, crop: :fill, class: "camel-avatar" %>
       </div>
       <div class="new-boking">
-        <%= link_to "Book", new_camel_booking_path(@camel), class: "cta-booking"%>
+        <%= link_to "Book", new_camel_booking_path(@camel), class: "cta-booking cta-primary"%>
       </div>
     </div>
       <div class="camel-box">
         <div class="info-box">
           <div class="header-box">
-            <h1 class="camel-name"><%= @camel.name %></h1>
+            <h1 class="camel-name font-alpha"><%= @camel.name %></h1>
           </div>
           <div class="description">
-            <h2 class="intro">A bit more about this camel...</h2>
-            <p class="description-text"> <%= @camel.description %></p>
+            <h4 class="intro">A bit more about this camel...</h4>
+            <p class="description-text"><%= @camel.description %></p>
+            <div class="camel-buttons">
+              <% if policy(@camel).edit? %>
+                <%= link_to "Update", edit_camel_path(@camel), class:"btn btn-primary" %>
+              <% end %>
+              <% if policy(@camel).destroy? %>
+                <%= link_to "Delete", camel_path(@camel), class:"btn btn-secondary", method: :delete, data: { confirm: "Do you really want to say bye bye?" } %>
+              <% end %>
+            </div>
           </div>
         </div>
         <div class="details">
           <h4 class="details-headline">Details</h4>
           <div class="details-camel">
-            <p class="camel-purpose"> <%= "Purpose: #{@camel.purpose}" %></p>
-            <p class="camel-price"> <%= "Price: #{humanized_money_with_symbol(@camel.price)}" %></p>
-            <p class="camel-city"> <%= "Location: #{@camel.city}" %></p>
-            <p class="camel-age"> <%= "Age: #{@camel.age}" %></p>
+            <p class="camel-city"><svg style="width:24px;height:24px" class="detail-icon" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+</svg><%= "#{@camel.city}" %></p>
+            <p class="camel-age"><svg style="width:24px;height:24px" class="detail-icon" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M13,2.05V5.08C16.39,5.57 19,8.47 19,12C19,12.9 18.82,13.75 18.5,14.54L21.12,16.07C21.68,14.83 22,13.45 22,12C22,6.82 18.05,2.55 13,2.05M12,19A7,7 0 0,1 5,12C5,8.47 7.61,5.57 11,5.08V2.05C5.94,2.55 2,6.81 2,12A10,10 0 0,0 12,22C15.3,22 18.23,20.39 20.05,17.91L17.45,16.38C16.17,18 14.21,19 12,19Z" />
+</svg><%= "#{@camel.age}" %></p>
+            <p class="camel-type"><svg style="width:24px;height:24px" class="detail-icon" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M19 2L14 6.5V17.5L19 13V2M6.5 5C4.55 5 2.45 5.4 1 6.5V21.16C1 21.41 1.25 21.66 1.5 21.66C1.6 21.66 1.65 21.59 1.75 21.59C3.1 20.94 5.05 20.5 6.5 20.5C8.45 20.5 10.55 20.9 12 22C13.35 21.15 15.8 20.5 17.5 20.5C19.15 20.5 20.85 20.81 22.25 21.56C22.35 21.61 22.4 21.59 22.5 21.59C22.75 21.59 23 21.34 23 21.09V6.5C22.4 6.05 21.75 5.75 21 5.5V19C19.9 18.65 18.7 18.5 17.5 18.5C15.8 18.5 13.35 19.15 12 20V6.5C10.55 5.4 8.45 5 6.5 5Z" />
+</svg><%= "#{@camel.camel_type}" %></p>
+            <p class="camel-purpose"><svg style="width:24px;height:24px" class="detail-icon" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,10.84 21.79,9.69 21.39,8.61L19.79,10.21C19.93,10.8 20,11.4 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.6,4 13.2,4.07 13.79,4.21L15.4,2.6C14.31,2.21 13.16,2 12,2M19,2L15,6V7.5L12.45,10.05C12.3,10 12.15,10 12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12C14,11.85 14,11.7 13.95,11.55L16.5,9H18L22,5H19V2M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12H16A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8V6Z" />
+</svg><%= "#{@camel.purpose}" %></p>
+            <p class="camel-price"><%= "#{humanized_money_with_symbol(@camel.price)}" %></p>
           </div>
         </div>
     </div>

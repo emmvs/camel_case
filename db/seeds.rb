@@ -17,23 +17,32 @@ puts "Database is clean! 🧼"
 
 puts "Creating Camels... 🐫🐫🐫🐫🐫🐫🐫"
 
-all_desctription = [
-  "dromedary",
-  "bactrian camel",
-  "hybrid camel",
-  "wild bactrian camel",
-  "cama",
+all_description = [
+  "This is an amazing Camel! 🐫",
+  "Best Camel ever! It was very slow but I had a good laugh!",
+  "Oh my god, I loved this Camel so much!",
+  "Camels have always been my favorite animals. Now I finally got the chance to have one on my Birthday Party and it was amazing!",
+  "Nasty but fast as hell!",
+  "Stubborn but super cute! 🥺",
+]
+
+all_type = [
+  "Dromedary",
+  "Bactrian Camel",
+  "Hybrid Camel",
+  "Wild bactrian Camel",
+  "Cama",
   ]
 
 all_purpose = [
-  "movie production",
-  "desert trip",
-  "race",
-  "photo shoot",
-  "birthday party",
-  "fair",
-  "present",
-  "wedding"]
+  "Movie production",
+  "Desert Trip",
+  "Race",
+  "Photo Shoot",
+  "Birthday Party",
+  "Fair",
+  "Gift",
+  "Wedding"]
 
 e = 0
 
@@ -57,9 +66,10 @@ e = 0
   camel = Camel.create!(
     name: Faker::FunnyName.name,
     age: rand(1..41),
-    description: all_desctription.sample,
+    description: all_description.sample,
+    camel_type: all_type.sample,
     price: rand(1_000..10_000),
-    city: Faker::Address.country,
+    city: Faker::Address.city,
     purpose: all_purpose.sample,
     user: User.first
   )

@@ -41,21 +41,27 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .btn-form {
 =======
 
 .btn-primary {
 >>>>>>> master
+=======
+.btn-primary {
+>>>>>>> de150e0b11b825839e69b3833a36cff669f94162
   color: white;
-  padding: 8px 24px;
-  border-radius: $border-radius-sm;
-  background: $primary-color;
+  padding: 6px 14px;
+  border-radius: 10px;
+  background: #6421d3;
   transition: background 0.3s ease;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.5);
 }
 
 .btn-primary:hover {
   background: $primary-color--dark;
   color: white;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .btn-secondary {
@@ -69,6 +75,7 @@
 .btn-secondary:hover {
   background: $secondary-color--dark;
   color: white;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .btn {
@@ -77,4 +84,10 @@
 
 .btn-request {
   margin: 50px;
+}
+
+.btn {
+  &.hover {
+    cursor: url(asset-path('camel.png')), auto !important;
+  }
 }

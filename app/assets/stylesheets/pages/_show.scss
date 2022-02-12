@@ -19,9 +19,9 @@ body {
 .header-box {
   margin-bottom: 12px;
   box-shadow: 0px 4px 2px #ececec;
-  border: 1px solid #FFFCF9;
+  border: 1px solid $bg-light;
   width: 500px;
-  background-color: #FFFCF9;
+  background-color: $bg-light;
   padding: 12px;
   border-radius: 4px;
   margin-top: 12px;
@@ -29,19 +29,20 @@ body {
 
 .description {
   box-shadow: 0px 4px 2px #ececec;
-  border: 1px solid #FFFCF9;
+  border: 1px solid $bg-light;
   width: 500px;
-  background-color: #FFFCF9;
+  background-color: $bg-light;
   padding: 12px;
   padding-bottom: 104px;
   margin-bottom: 48px;
   border-radius: 4px;
+  position: relative;
 }
 
 .details {
   box-shadow: 0px 4px 2px #ececec;
-  border: 1px solid #FFFCF9;
-  background-color: #FFFCF9;
+  border: 1px solid $bg-light;
+  background-color: $bg-light;
   margin-left: 16px;
   padding: 12px;
   width: 284px;
@@ -64,8 +65,19 @@ body {
   background-position: center;
 }
 
+.camel-image {
+  overflow: hidden;
+}
+
 .camel-avatar {
   border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform .6s ease;
+}
+
+.camel-avatar:hover {
+  transform: scale(1.15);
+	cursor: pointer;
 }
 
 .camel-box {
@@ -79,7 +91,7 @@ body {
 }
 
 .cta-booking {
-  background-color: black;
+  background-color: $primary-color--dark;
   color: white;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -93,21 +105,43 @@ body {
 
 .cta-booking:hover {
   text-decoration: none;
-  color: lightgrey;
+  color: white;
+  background-color: $primary-color;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
-.camel-purpose {
+.camel-purpose,
+.description-text,
+.details-camel p {
+  font-size: 100%;
+}
+
+.camel-purpose,
+.details-camel p {
   text-align: left;
+}
+
+.camel-buttons {
+  margin-top: 1rem;
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+}
+
+.detail-icon {
+  color: $secondary-color;
+  margin-right: 1rem;
 }
 
 .camel-price {
-  text-align: left;
+  margin-top: 2rem;
+  font-size: 200% !important;
+  font-weight: $font-weigh--bold;
+  color: $secondary-color--dark;
 }
 
-.camel-city {
-  text-align: left;
-}
-
-.camel-age {
-  text-align: left;
+.camel-box h1,
+.camel-box h4,
+.camel-box p {
+  padding: .2rem .4rem ;
 }

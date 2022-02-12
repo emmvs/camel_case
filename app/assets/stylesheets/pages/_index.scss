@@ -4,26 +4,87 @@
 .camels-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
-  margin-bottom: 20px;
-  padding: 20px;
+  grid-gap: 1.5rem;
+  margin-bottom: 1rem;
+  padding: .6rem;
 }
 
 .camel-card {
-  padding: 12px;
-  border: solid cornflowerblue;
+  display: flex;
+  align-items: center;
+  max-width: 25rem;
+  width: 100%;
+  height: max-content;
+  flex-direction: column;
+  padding: 0;
+  background-color: $bg-light;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 1rem;
+  border-radius: 4px;
+  overflow: hidden;
+  font-family: $secondary-font;
+}
+
+.camel-card p {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  margin-bottom: .6rem;
 }
 
 .camel-photo {
   width: 100%;
-  max-width: 200px;
+  max-width: 400px;
   height: auto;
-  margin-bottom: 10px;
-  position: relative;
-  left: 24%;
+
 }
 
-.img {
-  vertical-align: middle;
-  border-style: none;
+.camel-info {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  margin-left: 2rem;
+  text-align: left;
+  align-items: baseline;
+  line-height: 1.5;
+}
+
+.camel_city {
+  font-size: 90%;
+  color: $secondary-color--dark;
+}
+
+
+.camel_type {
+  font-size: 1rem;
+  color: $primary-color--dark;
+}
+
+.camel--age {
+  font-size: 100%;
+}
+
+.age-note {
+  color: $primary-color--light;
+  font-weight: $font-weigh--bold;
+}
+
+.camel--price {
+  font-weight: $font-weigh--bold;
+  color: $secondary-color--dark;
+}
+
+
+.camel-card-link:hover {
+  text-decoration: none;
+}
+
+.camel-card:hover {
+  background-color: rgba(250, 188, 95, 0.3);
+  color: $primary-color;
+}
+
+.card-icon {
+  margin-right: .6rem;
 }

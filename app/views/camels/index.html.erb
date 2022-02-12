@@ -1,15 +1,25 @@
-<h1>🐫 Here are our Amazing Camels 🐫</h1>
+<h1 class="font-alpha">🐫 Here are our Amazing Camels 🐫</h1>
 
 <div class="flex-container">
   <div class="camels-grid">
           <% @camels.each do |camel| %>
-            <div class="camel-card">
-            <p><%= link_to "#{camel.name}", camel_path(camel), class: "camel_link" %></p>
-            <p><%= camel.age %></p>
-            <p><%= humanized_money_with_symbol(camel.price) %></p>
-            <p><%= camel.city %></p>
-            <%= cl_image_tag camel.photo.key, height: 300, width: 300, crop: :fill, class: "camel-photo" %>
-            </div>
+            <%= link_to camel_path(camel), class: "camel-card-link" do %>
+              <div class="camel-card">
+                <%= cl_image_tag camel.photo.key, height: 200, width: 250, crop: :fill, class: "camel-photo" %>
+                <div class="camel-info">
+                  <h2 class="camel_title font-delta"><%= camel.name %></h2>
+                  <p class="camel_city"><svg style="width:24px;height:24px" class="card-icon" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z" />
+</svg><%= camel.city %></p>
+                  <p class="camel_type"><svg style="width:24px;height:24px" class="card-icon" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M19 2L14 6.5V17.5L19 13V2M6.5 5C4.55 5 2.45 5.4 1 6.5V21.16C1 21.41 1.25 21.66 1.5 21.66C1.6 21.66 1.65 21.59 1.75 21.59C3.1 20.94 5.05 20.5 6.5 20.5C8.45 20.5 10.55 20.9 12 22C13.35 21.15 15.8 20.5 17.5 20.5C19.15 20.5 20.85 20.81 22.25 21.56C22.35 21.61 22.4 21.59 22.5 21.59C22.75 21.59 23 21.34 23 21.09V6.5C22.4 6.05 21.75 5.75 21 5.5V19C19.9 18.65 18.7 18.5 17.5 18.5C15.8 18.5 13.35 19.15 12 20V6.5C10.55 5.4 8.45 5 6.5 5Z" />
+</svg><%= camel.camel_type %></p>
+                  <p class="camel_age camel--age"><svg style="width:24px;height:24px" class="card-icon" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M13,2.05V5.08C16.39,5.57 19,8.47 19,12C19,12.9 18.82,13.75 18.5,14.54L21.12,16.07C21.68,14.83 22,13.45 22,12C22,6.82 18.05,2.55 13,2.05M12,19A7,7 0 0,1 5,12C5,8.47 7.61,5.57 11,5.08V2.05C5.94,2.55 2,6.81 2,12A10,10 0 0,0 12,22C15.3,22 18.23,20.39 20.05,17.91L17.45,16.38C16.17,18 14.21,19 12,19Z" /></svg><span class="age-note"><%= camel.age%></span> years old</p>
+                  <p class="camel_price camel--price"><%= humanized_money_with_symbol(camel.price) %></p>
+                </div>
+              </div>
+            <% end %>
           <% end %>
   </div>
 </div>
