@@ -1,12 +1,7 @@
 @import "components/button";
 
-.container {
-  max-width: 2000px;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.py-5 {
+.form-adjust {
+  max-width: 2000px!important;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -19,7 +14,6 @@
   padding: 2rem;
   margin: 0 !important;
 }
-
 .booking-container {
   margin: 0 auto;
   width: 1000px;
@@ -95,3 +89,12 @@
   justify-content: center;
   align-items: center;
 }
+// .form--link {
+//   text-decoration: none;
+//   color: $font-color;
+//   margin-left: 1rem;
+// }
+
+// .form--link:hover {
+//   color: $font-color;
+// }

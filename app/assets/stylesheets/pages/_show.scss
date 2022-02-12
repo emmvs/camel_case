@@ -19,9 +19,9 @@ body {
 .header-box {
   margin-bottom: 12px;
   box-shadow: 0px 4px 2px #ececec;
-  border: 1px solid #FFFCF9;
+  border: 1px solid $bg-light;
   width: 500px;
-  background-color: #FFFCF9;
+  background-color: $bg-light;
   padding: 12px;
   border-radius: 4px;
   margin-top: 12px;
@@ -29,9 +29,9 @@ body {
 
 .description {
   box-shadow: 0px 4px 2px #ececec;
-  border: 1px solid #FFFCF9;
+  border: 1px solid $bg-light;
   width: 500px;
-  background-color: #FFFCF9;
+  background-color: $bg-light;
   padding: 12px;
   padding-bottom: 104px;
   margin-bottom: 48px;
@@ -41,8 +41,8 @@ body {
 
 .details {
   box-shadow: 0px 4px 2px #ececec;
-  border: 1px solid #FFFCF9;
-  background-color: #FFFCF9;
+  border: 1px solid $bg-light;
+  background-color: $bg-light;
   margin-left: 16px;
   padding: 12px;
   width: 284px;
@@ -129,6 +129,7 @@ body {
 
 .detail-icon {
   color: $secondary-color;
+  margin-right: 1rem;
 }
 
 .camel-price {
