@@ -52,9 +52,8 @@
   max-width: 50rem;
   width: 100%;
   height: max-content;
-  margin-left: 8rem;
+  margin-left: 5rem;
   margin-bottom: 2rem;
-  padding: 1rem 0;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   align-items: center;
@@ -84,14 +83,41 @@
   text-align: left;
 }
 
-.request-card .request-card-infos {
-  padding: 16px;
+.request-card .request-card-info {
+  line-height: 1.8;
+  padding: 12px;
 }
 
-.request--link ~ a {
+.request--link a {
   color: white;
+  cursor: url(asset-path('camel.png')), auto !important;
+}
+
+.request--link a:hover {
+  text-decoration: none;
 }
 
 .request-booking-user {
-  color: $secondary-color;
+  color: $secondary-color--dark;
+}
+
+.request-camel-name {
+  color: $primary-color;
+  font-size: 120%;
+  font-weight: 600;
+}
+
+.request-camel-purpose {
+  text-decoration: underline;
+}
+
+.request--price {
+  font-size: 150% !important;
+  font-weight: 600;
+  color: $secondary-color--dark;
+}
+
+.request--date {
+  color: $primary-color--dark;
+  font-weight: 600;
 }
