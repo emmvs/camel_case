@@ -83,6 +83,7 @@
 .camel-card:hover {
   background-color: rgba(250, 188, 95, 0.3);
   color: $primary-color;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .card-icon {
