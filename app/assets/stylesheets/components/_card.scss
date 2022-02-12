@@ -47,20 +47,26 @@
 }
 
 .request-card {
+  display: flex;
   overflow: hidden;
-  height: 140px;
-  margin: 0px 220px ;
+  max-width: 50rem;
+  width: 100%;
+  height: max-content;
+  margin-left: 8rem;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .request-card img {
   height: 100%;
-  width: 120px;
+  width: 200px;
   object-fit: cover;
-  margin-right: 20px;
+  margin: 0;
+  margin-right: 1rem;
 }
 
 .request-card h2 {
@@ -80,4 +86,12 @@
 
 .request-card .request-card-infos {
   padding: 16px;
+}
+
+.request--link ~ a {
+  color: white;
+}
+
+.request-booking-user {
+  color: $secondary-color;
 }
