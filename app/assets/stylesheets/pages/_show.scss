@@ -110,6 +110,7 @@ body {
   text-decoration: none;
   color: white;
   background-color: $primary-color--dark;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .camel-purpose,
@@ -157,4 +158,10 @@ body {
 
 .camel-purpose {
   padding-top: 8px;
+}
+
+.camel-box h1,
+.camel-box h4,
+.camel-box p {
+  padding: .2rem .4rem ;
 }
