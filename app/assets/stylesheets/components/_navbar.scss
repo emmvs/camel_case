@@ -51,6 +51,9 @@
 
 .camel-link {
   color: $primary-color !important;
+  &:hover {
+    cursor: url(asset-path('camel.png')), auto !important;
+  }
 }
 
 

@@ -52,6 +52,7 @@
 .btn-primary:hover {
   background: $primary-color--dark;
   color: white;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .btn-secondary {
@@ -65,6 +66,7 @@
 .btn-secondary:hover {
   background: $secondary-color--dark;
   color: white;
+  cursor: url(asset-path('camel.png')), auto !important;
 }
 
 .btn {
@@ -73,4 +75,10 @@
 
 .btn-request {
   margin: 50px;
+}
+
+.btn {
+  &.hover {
+    cursor: url(asset-path('camel.png')), auto !important;
+  }
 }
