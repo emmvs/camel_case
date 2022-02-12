@@ -105,3 +105,44 @@
   border-color: $primary-color;
   margin-right: 12px;
 }
+
+.container-time {
+  display: flex;
+  padding: 0px;
+}
+
+.hour {
+ font-size: 14px;
+  font-weight: bold;
+  padding-right: 0px;
+  padding-left: 0px;
+  // color: $primary-color;
+}
+
+.minute {
+ font-size: 14px;
+ font-weight: bold;
+ padding-right: 0px;
+ padding-left: 0px;
+//  color: $primary-color;
+}
+
+.second {
+  font-size: 14px;
+  font-weight: bold;
+  padding-right: 0px;
+  padding-left: 0px;
+  // color: $primary-color;
+}
+
+.time {
+  font-size: 12px;
+  font-weight: normal;
+  padding-bottom: 0px;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
