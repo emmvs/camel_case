@@ -9,10 +9,14 @@
         <%= f.input :check_in, as: :string, type: :text %>
         <%= f.input :check_out, as: :string, type: :text %>
       </div>
-      <%= f.button :submit, "Book", class: "booking-cta" %>
+      <div class="booking-cta-box">
+        <div class="booking-cta">
+          <%= f.button :submit, "Book", class: "booking-cta" %>
+        </div>
+      </div>
       <% end %>
     <% else %>
-    <p class="error-owner">You can not rent your own AMAZING camel!!!</p>
+    <p class="error-owner">You can not rent your own AMAZING camel 🙄</p>
     <% end %>
     </div>
     </div>

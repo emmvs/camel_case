@@ -34,9 +34,9 @@
 .booking-select-box {
   display: flex;
   align-items: center;
-  padding-top: 24px;
+  padding-top: 32px;
   padding-bottom: 24px;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   width: 1000px;
   justify-content: center;
   border: solid #fbbb5c;
@@ -47,55 +47,51 @@
   width: 800px;
 }
 
-// .booking-details-info {
-//   margin-right: 54px;
-//   text-align: left;
+// #booking_check_out.form-control.string.required {
+//   border-radius: 6px;
 // }
 
-// .camel-booking-name {
-//   font-size: 40px;
-//   font-weight: bold;
-//   color: #5f18ea;
-//   font-family: $headers-font;
+.form-control.string.required {
+  border-radius: 6px;
+  background-color: white;
+}
+
+.form-control.string.required:focus {
+  outline: none !important;
+}
+
+// #booking_check_in {
+//   border-radius: 6px;
 // }
 
-// .camel-booking-city {
-//   font-size: 16px;
-//   text-align: left;
-//   font-family: $body-font;
-// }
+#booking_check_out {
+  border-radius: 6px;
+  background-color: white;
+}
 
-// .camel-booking-age {
-//   font-size: 16px;
-//   text-align: left;
-//   font-family: $body-font;
-// }
+#booking_check_out:focus {
+  outline: none !important;
+}
 
-// .camel-booking-photo {
-//   border-radius: 4px;
-//   width: 50%;
-//   height: 50%;
-// }
+.btn.booking-cta {
+  background-color: $primary-color;
+  color: white;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
 
-// .booking-box {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
+.booking-cta-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-// .booking-select-box {
-//   width: 800px;
-//   margin: 0 auto;
-// }
-
-// .camel-booking-price {
-//   font-size: 16px;
-//   text-align: left;
-//   font-family: $body-font;
-// }
-
-// .booking-select {
-//   margin-bottom: 32px;
-// }
-
-// .booking
+.btn.booking-cta:hover {
+  text-decoration: none;
+  color: white;
+  background-color: $primary-color--dark;
+}
