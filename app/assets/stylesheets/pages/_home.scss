@@ -80,11 +80,11 @@ h1, p {
   border: 1px solid #E7E7E7;
 }
 
-.search-form-control .form-control:focus {
+/*.search-form-control .form-control:focus {
   border: 1px solid #1EDD88;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
+}*/
 
 .camel-search-btn {
   border-radius: 10px;
@@ -93,4 +93,9 @@ h1, p {
 
 .camel-search-field {
  border-radius: 10px;
+}
+
+.camel-search-field:focus {
+  border-color: #1EDD88;
+  box-shadow: 0 0 0 0.2rem rgba(30, 221, 136, .25);
 }
