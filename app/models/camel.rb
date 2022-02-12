@@ -10,4 +10,10 @@ class Camel < ApplicationRecord
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
   monetize :price_cents
+
+  def unavailable_dates
+    bookings.pluck(:check_in, :check_out).map do |range|
+      { from: range[0], to: range[1] }
+    end
+  end
 end
