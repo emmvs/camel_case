@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get "payment/start/:id", to: "payments#start", as: "payment"
 
   # get "/webhook", to: "webhooks#webhook"
+  # mount StripeEvent::Engine, at: '/stripe-webhooks'
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   resources :bookings, only: [ :edit, :update, :index ]
