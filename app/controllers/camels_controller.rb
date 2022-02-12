@@ -1,7 +1,7 @@
 class CamelsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :policy_scope_camels, only: [:index, :show, :new, :edit, :update, :destroy]
-  before_action :camel_check, only: [:show, :new, :edit, :update, :destroy]
+  before_action :camel_check, only: [:show, :edit, :update, :destroy]
   def index
     if params[:query].present?
       @camels = Camel.search_by_city(params[:query])
@@ -35,7 +35,7 @@ class CamelsController < ApplicationController
 
   def update
     if @camel.update(camel_params)
-      redirect_to @camel, notice: "Your amazing camel is refreshed"
+      redirect_to @camel, notice: "Your amazing camel is edited"
     else
       render :edit
     end
@@ -54,7 +54,7 @@ class CamelsController < ApplicationController
   end
 
   def camel_params
-    params.require(:camel).permit(:name, :age, :description, :price, :city, :purpose, :photo)
+    params.require(:camel).permit(:name, :camel_type, :age, :description, :price, :city, :purpose, :photo)
   end
 
   def policy_scope_camels

@@ -5,10 +5,11 @@
         <h3 class="font-delta">Tell us about your Camel</h3>
         <%= simple_form_for(@camel) do |f| %>
           <%= f.input :name, placeholder: 'Your camel nickname - Sugarcane' %>
+          <%= f.input :camel_type, placeholder: 'What is your camel type?' %>
           <%= f.input :age, placeholder: 'How old is your amazing camel?' %>
           <%= f.input :price, placeholder: 'How much should your camel worth for a day' %>
           <%= f.input :city, placeholder: "Where's your camel living" %>
-          <label for="purpose">Your camel's purpose:</label>
+          <label for="purpose">Your camel's purpose:&nbsp;&nbsp;&nbsp;</label>
           <%= f.select :purpose, ["Movie Production", "Desert Trip", "Race", "Photoshoot", "Birthday Party", "Fair", "Present", "Wedding"] %>
           <%= f.input :description, placeholder: 'Let us know more about your beloved camel' %>
           <%= f.input :photo, label: "Choose the sassy picture for your camel"  %>
