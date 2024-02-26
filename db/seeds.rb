@@ -23,7 +23,7 @@ all_description = [
   "Oh my god, I loved this Camel so much!",
   "Camels have always been my favorite animals. Now I finally got the chance to have one on my Birthday Party and it was amazing!",
   "Nasty but fast as hell!",
-  "Stubborn but super cute! 🥺",
+  "Stubborn but super cute! 🥺"
 ]
 
 all_type = [

@@ -25,7 +25,6 @@ class CamelsController < ApplicationController
     if @camel.save
       redirect_to @camel
     else
-      #raise
       render :new
     end
   end
